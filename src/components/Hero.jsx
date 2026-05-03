@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, BriefcaseBusiness, CalendarDays, Sparkles } from "lucide-react";
+import { ArrowRight, BriefcaseBusiness, CalendarDays } from "lucide-react";
 
 export default function Hero() {
   return (
@@ -64,17 +64,59 @@ export default function Hero() {
             transition={{ duration: 1.15, ease: "easeOut" }}
             className="grid gap-4"
           >
-            <div className="rounded-[1.75rem] border border-stone-200/80 bg-white/85 p-5 shadow-soft">
-              <div className="flex items-center justify-between">
-                <span className="pill-tag">À venir</span>
-                <Sparkles size={18} className="text-accent" />
+            <div className="rounded-[1.75rem] border border-zinc-800/90 bg-zinc-900 p-5 shadow-soft">
+              <div className="mb-4 flex items-center gap-1.5">
+                <span className="h-3 w-3 rounded-full bg-[#ff5f57]" />
+                <span className="h-3 w-3 rounded-full bg-[#febc2e]" />
+                <span className="h-3 w-3 rounded-full bg-[#28c840]" />
+                <span className="ml-4 font-mono text-xs text-zinc-500">profil.js</span>
               </div>
-              <h2 className="mt-4 text-2xl font-semibold text-primary">
-                Stage chez Hyvilo
-              </h2>
-              <p className="mt-2 text-sm leading-6 text-stone-600">
-                Du 20 mai 2026 au 14 août 2026 à Paris 15e, sur un environnement React, Django et GitLab CI/CD.
-              </p>
+              <div className="font-mono text-sm leading-7">
+                <p><span className="italic text-zinc-600">{"// Elodie Cao — 2026"}</span></p>
+                <p>
+                  <span className="text-indigo-400">const </span>
+                  <span className="text-sky-300">profil</span>
+                  <span className="text-zinc-400"> = {"{"}</span>
+                </p>
+                <p className="pl-5">
+                  <span className="text-slate-400">formation</span>
+                  <span className="text-zinc-600">: </span>
+                  <span className="text-emerald-400">"Master MIAGE"</span>
+                  <span className="text-zinc-600">,</span>
+                </p>
+                <p className="pl-5">
+                  <span className="text-slate-400">école</span>
+                  <span className="text-zinc-600">: </span>
+                  <span className="text-emerald-400">"Dauphine PSL"</span>
+                  <span className="text-zinc-600">,</span>
+                </p>
+                <p className="pl-5">
+                  <span className="text-slate-400">stack</span>
+                  <span className="text-zinc-600">: [</span>
+                  <span className="text-amber-300">"React"</span>
+                  <span className="text-zinc-600">, </span>
+                  <span className="text-amber-300">"Django"</span>
+                  <span className="text-zinc-600">, </span>
+                  <span className="text-amber-300">"Python"</span>
+                  <span className="text-zinc-600">],</span>
+                </p>
+                <p className="pl-5">
+                  <span className="text-slate-400">alternance</span>
+                  <span className="text-zinc-600">: </span>
+                  <span className="text-orange-400">true</span>
+                  <span className="text-zinc-600">,</span>
+                </p>
+                <p className="pl-5">
+                  <span className="text-slate-400">disponible</span>
+                  <span className="text-zinc-600">: </span>
+                  <span className="text-emerald-400">"sept. 2026"</span>
+                  <span className="text-zinc-600">,</span>
+                </p>
+                <p>
+                  <span className="text-zinc-400">{"}"}</span>
+                  <span className="cursor-blink ml-0.5 text-indigo-400">|</span>
+                </p>
+              </div>
             </div>
             <div className="grid gap-4 sm:grid-cols-2">
               <div className="rounded-[1.75rem] border border-stone-200/80 bg-[#f8f5ef] p-5">

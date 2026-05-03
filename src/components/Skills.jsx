@@ -54,10 +54,19 @@ export default function Skills() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.7 }}
-        className="mb-10"
+        className="mb-10 flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between"
       >
-        <span className="eyebrow">Compétences</span>
-        <h2 className="section-title mt-5">Des bases solides pour concevoir, développer et structurer.</h2>
+        <div>
+          <span className="eyebrow">Compétences</span>
+          <h2 className="section-title mt-5">Des bases solides pour concevoir, développer et structurer.</h2>
+        </div>
+        <div className="hidden shrink-0 rounded-2xl border border-stone-200 bg-white/80 px-4 py-3 font-mono text-xs text-stone-400 shadow-soft sm:block">
+          <span className="text-green-500">$</span>
+          <span className="text-stone-500"> npm install </span>
+          <span className="text-sky-400">--save</span>
+          <span className="text-amber-400"> skills</span>
+          <span className="cursor-blink ml-0.5 text-stone-400">█</span>
+        </div>
       </motion.div>
       <div className="space-y-8">
         <motion.div

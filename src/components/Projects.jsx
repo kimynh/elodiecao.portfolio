@@ -112,12 +112,23 @@ export default function Projects() {
         {projects.map((project) => (
           <motion.div
             key={project.title}
-            className={`soft-card relative flex flex-col gap-4 p-6 transition-transform duration-300 hover:-translate-y-1 ${project.main ? "md:col-span-2" : ""}`}
+            className={`soft-card relative flex flex-col gap-4 p-6 transition-transform duration-300 hover:-translate-y-1 ${project.main ? "md:col-span-2 pt-12" : ""}`}
             initial="offscreen"
             whileInView="onscreen"
             viewport={{ once: true, amount: 0.3 }}
             variants={cardVariants}
           >
+            {project.main && (
+              <div className="absolute inset-x-0 top-0 flex items-center gap-2 rounded-t-3xl border-b border-stone-200/50 bg-stone-50/70 px-5 py-2.5 backdrop-blur-sm">
+                <span className="h-2 w-2 rounded-full bg-accent/50" />
+                <span className="font-mono text-[11px] font-medium text-stone-400">ATS.jsx</span>
+                <span className="ml-auto font-mono text-[11px] text-stone-300">
+                  <span className="text-accent/50">{"<"}</span>
+                  {"/"}
+                  <span className="text-accent/50">{">"}</span>
+                </span>
+              </div>
+            )}
             <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#f4efe8]">
               {project.icon}
             </div>
