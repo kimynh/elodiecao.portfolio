@@ -34,7 +34,7 @@ export default function Hero() {
               transition={{ duration: 1.05, ease: "easeOut" }}
               className="mt-6 max-w-2xl text-lg leading-8 text-stone-600 md:text-xl"
             >
-              Actuellement en L3 MIAGE à l’Université Paris Cité, j’intégrerai le Master MIAGE à la rentrée 2026. J’aime concevoir des expériences numériques claires, utiles et bien structurées, et je rejoindrai Hyvilo du 20 mai 2026 au 14 août 2026 avant de poursuivre avec une alternance de 2 ans.
+              Actuellement en L3 MIAGE à l’Université Paris Cité, j’intégrerai le Master MIAGE à la rentrée 2026. J’aime concevoir des expériences numériques claires, utiles et bien structurées, et je suis en stage chez Hyvilo du 20 mai au 14 août 2026 avant de poursuivre avec une alternance de 2 ans.
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 32 }}
