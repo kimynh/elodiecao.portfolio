@@ -22,7 +22,7 @@ export default function About() {
             Je suis actuellement en L3 MIAGE à l’Université Paris Cité et j’entrerai en Master MIAGE à Panthéon-Sorbonne à la rentrée 2026. Mon parcours me permet de faire le lien entre développement logiciel, analyse de données et compréhension des besoins métier, avec un intérêt marqué pour les systèmes d’information.
           </p>
           <p className="mt-5 text-base leading-8 text-stone-600 md:text-lg">
-            J’aime les projets bien pensés, les interfaces lisibles et les équipes où l’on construit avec méthode. Je suis actuellement en stage chez Hyvilo depuis le 20 mai 2026, avant de poursuivre avec une alternance à partir de septembre 2026.
+            J’aime les projets bien pensés, les interfaces lisibles et les équipes où l’on construit avec méthode. Je suis actuellement en stage chez Hyvilo depuis le 20 mai 2026, et je rejoindrai Capgemini en septembre 2026 pour une alternance de 2 ans en ingénierie logicielle.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
             <span className="pill-tag">Université Paris Cité</span>

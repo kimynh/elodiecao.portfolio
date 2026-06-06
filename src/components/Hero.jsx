@@ -34,7 +34,7 @@ export default function Hero() {
               transition={{ duration: 1.05, ease: "easeOut" }}
               className="mt-6 max-w-2xl text-lg leading-8 text-stone-600 md:text-xl"
             >
-              Actuellement en L3 MIAGE à l’Université Paris Cité, j’intégrerai le Master MIAGE à Panthéon-Sorbonne à la rentrée 2026. J’aime concevoir des expériences numériques claires, utiles et bien structurées, et je suis en stage chez Hyvilo du 20 mai au 14 août 2026 avant de poursuivre avec une alternance de 2 ans.
+              Actuellement en L3 MIAGE à l’Université Paris Cité, je suis en stage chez Hyvilo du 20 mai au 14 août 2026. En septembre 2026, je rejoins Capgemini en alternance pour 2 ans, en parallèle du Master MIAGE à Panthéon-Sorbonne.
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 32 }}
@@ -88,6 +88,12 @@ export default function Hero() {
                   <span className="text-slate-400">école</span>
                   <span className="text-zinc-600">: </span>
                   <span className="text-emerald-400">"Panthéon-Sorbonne"</span>
+                  <span className="text-zinc-600">,</span>
+                </p>
+                <p className="pl-5">
+                  <span className="text-slate-400">contrat</span>
+                  <span className="text-zinc-600">: </span>
+                  <span className="text-emerald-400">"Capgemini — 24 mois"</span>
                   <span className="text-zinc-600">,</span>
                 </p>
                 <p className="pl-5">

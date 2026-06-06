@@ -1,8 +1,18 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Briefcase, Mic, School, Sparkles } from "lucide-react";
+import { Briefcase, Building2, Mic, School, Sparkles } from "lucide-react";
 
 const experiences = [
+  {
+    icon: <Building2 size={20} className="text-accent" />,
+    title: "Ingénieure Logiciel – Alternance",
+    org: "Capgemini",
+    date: "Septembre 2026 – Septembre 2028",
+    location: "Paris · 24 mois",
+    description: "Intégration des équipes spécialisées en ingénierie logicielle et architectures Cloud, en parallèle du Master MIAGE à Panthéon-Sorbonne.",
+    stack: ["Ingénierie logicielle", "Cloud", "Master MIAGE", "Alternance 24 mois"],
+    status: "À venir",
+  },
   {
     icon: <Sparkles size={20} className="text-accent" />,
     title: "Stagiaire développement web – Hyvilo",
@@ -74,7 +84,7 @@ export default function Experience() {
         className="mb-10"
       >
         <span className="eyebrow">Expérience</span>
-        <h2 className="section-title mt-5">Un parcours en construction, actuellement en stage chez Hyvilo.</h2>
+        <h2 className="section-title mt-5">Stage chez Hyvilo, alternance chez Capgemini, Master à Panthéon-Sorbonne.</h2>
       </motion.div>
       <div className="relative flex flex-col gap-5 pl-4 md:pl-8">
         <div className="absolute left-0 top-2 h-[calc(100%-0.5rem)] w-px bg-stone-300 md:left-3" />
