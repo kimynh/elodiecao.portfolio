@@ -1,14 +1,13 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { GraduationCap, Handshake, MapPin, Car } from "lucide-react";
-import dauphinelogo from "../assets/dauphine-logo.png";
 import sorbonneLogo from "../assets/sorbonne-logo.png";
 
 const highlights = [
   {
     icon: <GraduationCap size={18} className="text-accent" />,
-    label: "Double admission",
-    value: "Master MIAGE 2026",
+    label: "Admise à",
+    value: "Panthéon-Sorbonne",
   },
   {
     icon: <MapPin size={18} className="text-accent" />,
@@ -38,22 +37,21 @@ export default function Alternance() {
       >
         <span className="eyebrow">Alternance 2026</span>
         <h2 className="section-title mt-5 max-w-3xl">
-          Admise en Master MIAGE,{" "}
+          Admise à Panthéon-Sorbonne,{" "}
           <span className="font-display italic text-taupe">
             je cherche une entreprise partenaire.
           </span>
         </h2>
         <p className="mt-4 max-w-2xl text-base leading-7 text-stone-600 md:text-lg">
-          Après mon stage chez Hyvilo cet été, je rejoindrai l'une de ces deux
-          formations d'excellence à la rentrée 2026. Pour décrocher ma place
-          notamment à Dauphine, j'ai besoin d'un contrat d'alternance. Je suis
-          à la recherche d'une entreprise où je pourrai contribuer concrètement
-          tout en montant en compétences sur le développement et les systèmes
-          d'information.
+          Après mon stage chez Hyvilo cet été, je rejoindrai le Master MIAGE à
+          Panthéon-Sorbonne à la rentrée 2026. Pour intégrer cette formation,
+          j'ai besoin d'un contrat d'alternance. Je suis à la recherche d'une
+          entreprise où je pourrai contribuer concrètement tout en montant en
+          compétences sur le développement et les systèmes d'information.
         </p>
 
-        <div className="mt-10 grid gap-6 lg:grid-cols-[1fr_1fr_1.1fr]">
-          {/* Dauphine card */}
+        <div className="mt-10 grid gap-6 lg:grid-cols-[1fr_1.1fr]">
+          {/* Sorbonne card */}
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -62,40 +60,7 @@ export default function Alternance() {
             className="soft-card flex flex-col justify-between gap-6 p-6"
           >
             <div>
-              <span className="pill-tag mb-4 inline-flex">Priorité</span>
-              <img
-                src={dauphinelogo}
-                alt="Université Paris Dauphine - PSL"
-                className="mx-auto h-14 w-auto object-contain"
-              />
-              <h3 className="mt-5 text-xl font-semibold text-primary">
-                Paris Dauphine — PSL
-              </h3>
-              <p className="mt-2 text-sm leading-6 text-stone-600">
-                Reconnue comme l'une des meilleures universités de gestion et
-                d'informatique appliquée en France, Dauphine PSL figure
-                régulièrement dans les classements mondiaux. Son Master MIAGE
-                forme des profils hybrides, capables de piloter des projets
-                numériques à l'interface du technique et du métier.
-              </p>
-            </div>
-            <div className="flex flex-wrap gap-2">
-              <span className="pill-tag">Classement top 3 MIAGE</span>
-              <span className="pill-tag">Réseau PSL</span>
-              <span className="pill-tag">1 sem. entreprise / 1 sem. école</span>
-            </div>
-          </motion.div>
-
-          {/* Sorbonne card */}
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7, delay: 0.2 }}
-            className="soft-card flex flex-col justify-between gap-6 p-6"
-          >
-            <div>
-              <span className="pill-tag mb-4 inline-flex">Admise</span>
+              <span className="pill-tag mb-4 inline-flex">Confirmée</span>
               <img
                 src={sorbonneLogo}
                 alt="Panthéon Sorbonne - Université Paris 1"
@@ -123,7 +88,7 @@ export default function Alternance() {
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.7, delay: 0.3 }}
+            transition={{ duration: 0.7, delay: 0.2 }}
             className="flex flex-col gap-4"
           >
             <div className="rounded-[1.75rem] border border-stone-200/80 bg-[#f8f5ef] p-5">

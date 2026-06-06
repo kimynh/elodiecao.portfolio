@@ -47,7 +47,7 @@ export default function Navbar() {
             className="ml-2 inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-sm font-semibold text-white transition-transform hover:scale-[1.02]"
           >
             <Sparkles size={16} />
-            Hyvilo en mai
+            Stage Hyvilo en cours
           </a>
         </div>
         <button
@@ -80,7 +80,7 @@ export default function Navbar() {
             className="rounded-2xl bg-primary px-4 py-3 text-base font-semibold text-white"
             onClick={() => setOpen(false)}
           >
-            Nouveau stage Hyvilo
+            Stage Hyvilo en cours
           </a>
         </motion.div>
       )}

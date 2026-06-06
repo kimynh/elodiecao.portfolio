@@ -16,7 +16,7 @@ const experiences = [
       "Écriture de tests unitaires et fonctionnels, avec versioning Git et CI/CD sur GitLab.",
     ],
     stack: ["React", "JavaScript", "Python", "Django", "Git", "GitLab CI/CD"],
-    status: "À venir",
+    status: "En cours",
   },
   {
     icon: <Mic size={22} className="text-primary" />,
@@ -74,7 +74,7 @@ export default function Experience() {
         className="mb-10"
       >
         <span className="eyebrow">Expérience</span>
-        <h2 className="section-title mt-5">Un parcours en construction, avec Hyvilo comme prochaine étape.</h2>
+        <h2 className="section-title mt-5">Un parcours en construction, actuellement en stage chez Hyvilo.</h2>
       </motion.div>
       <div className="relative flex flex-col gap-5 pl-4 md:pl-8">
         <div className="absolute left-0 top-2 h-[calc(100%-0.5rem)] w-px bg-stone-300 md:left-3" />
