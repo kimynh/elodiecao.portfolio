@@ -105,7 +105,7 @@ export default function Alternance() {
               </p>
               <p className="mt-3 text-sm leading-6 text-stone-600">
                 Intégration des équipes spécialisées en ingénierie logicielle
-                et architectures Cloud dès septembre 2026, pour un contrat de
+                et architectures Cloud dès septembre 2026 pour un contrat de
                 24 mois en parallèle du Master MIAGE.
               </p>
             </div>
