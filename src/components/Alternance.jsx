@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { GraduationCap, MapPin, Car, CalendarDays } from "lucide-react";
 import sorbonneLogo from "../assets/sorbonne-logo.png";
+import hyviloLogo from "../assets/hyvilo.png";
 import capgeminiLogo from "../assets/Capgemini_Logo.svg.png";
 
 const highlights = [
@@ -17,7 +18,7 @@ const highlights = [
   },
   {
     icon: <CalendarDays size={18} className="text-accent" />,
-    label: "Début",
+    label: "Début alternance",
     value: "Septembre 2026",
   },
   {
@@ -49,7 +50,7 @@ export default function Alternance() {
           en parallèle du Master MIAGE à Panthéon-Sorbonne.
         </p>
 
-        <div className="mt-10 grid gap-6 lg:grid-cols-[1fr_1fr_1.1fr]">
+        <div className="mt-10 grid gap-6 lg:grid-cols-3">
           {/* Sorbonne card */}
           <motion.div
             initial={{ opacity: 0, y: 24 }}
@@ -71,14 +72,47 @@ export default function Alternance() {
               <p className="mt-2 text-sm leading-6 text-stone-600">
                 Université de rang mondial et l'une des plus anciennes
                 d'Europe, Paris 1 délivre un Master MIAGE reconnu pour son
-                exigence académique et la qualité de son réseau professionnel,
-                ancré dans le tissu économique parisien.
+                exigence académique et la qualité de son réseau professionnel.
               </p>
             </div>
             <div className="flex flex-wrap gap-2">
               <span className="pill-tag">Université historique</span>
               <span className="pill-tag">Réseau Paris 1</span>
-              <span className="pill-tag">2-3 sem. entreprise / 2-3 sem. école</span>
+              <span className="pill-tag">Master MIAGE</span>
+            </div>
+          </motion.div>
+
+          {/* Hyvilo card */}
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+            className="soft-card flex flex-col justify-between gap-6 p-6"
+          >
+            <div>
+              <span className="pill-tag mb-4 inline-flex">En cours</span>
+              <img
+                src={hyviloLogo}
+                alt="Hyvilo"
+                className="mx-auto h-14 w-auto object-contain"
+              />
+              <h3 className="mt-5 text-xl font-semibold text-primary">
+                Hyvilo
+              </h3>
+              <p className="mt-1 text-sm font-semibold text-stone-500">
+                Stagiaire développement web
+              </p>
+              <p className="mt-3 text-sm leading-6 text-stone-600">
+                Stage de 3 mois autour du développement d'une application web —
+                back-office et front-office — encadré par le directeur technique.
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-2">
+              <span className="pill-tag">Mai – Août 2026</span>
+              <span className="pill-tag">React</span>
+              <span className="pill-tag">Django</span>
+              <span className="pill-tag">GitLab CI/CD</span>
             </div>
           </motion.div>
 
@@ -87,7 +121,7 @@ export default function Alternance() {
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.7, delay: 0.2 }}
+            transition={{ duration: 0.7, delay: 0.3 }}
             className="soft-card flex flex-col justify-between gap-6 p-6"
           >
             <div>
@@ -105,7 +139,7 @@ export default function Alternance() {
               </p>
               <p className="mt-3 text-sm leading-6 text-stone-600">
                 Intégration des équipes spécialisées en ingénierie logicielle
-                et architectures Cloud dès septembre 2026 pour un contrat de
+                et architectures Cloud dès septembre 2026, pour un contrat de
                 24 mois en parallèle du Master MIAGE.
               </p>
             </div>
@@ -116,46 +150,31 @@ export default function Alternance() {
               <span className="pill-tag">Cloud</span>
             </div>
           </motion.div>
-
-          {/* Infos pratiques */}
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7, delay: 0.3 }}
-            className="flex flex-col gap-4"
-          >
-            <div className="rounded-[1.75rem] border border-stone-200/80 bg-[#f8f5ef] p-5">
-              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-stone-500">
-                Ce que j'apporte
-              </p>
-              <p className="mt-3 text-base leading-7 text-stone-700">
-                Une base solide en développement web (React, Django), en
-                analyse de données et en gestion de projet, avec la capacité
-                de comprendre à la fois le code et les besoins fonctionnels.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-2 gap-4">
-              {highlights.map(({ icon, label, value }) => (
-                <div
-                  key={label}
-                  className="rounded-[1.75rem] border border-stone-200/80 bg-white/85 p-4 shadow-soft"
-                >
-                  <div className="flex items-center gap-2">
-                    {icon}
-                    <p className="text-xs font-semibold uppercase tracking-[0.15em] text-stone-400">
-                      {label}
-                    </p>
-                  </div>
-                  <p className="mt-2 text-sm font-semibold text-primary">
-                    {value}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </motion.div>
         </div>
+
+        {/* Highlights strip */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="mt-6 grid grid-cols-2 gap-4 lg:grid-cols-4"
+        >
+          {highlights.map(({ icon, label, value }) => (
+            <div
+              key={label}
+              className="rounded-[1.75rem] border border-stone-200/80 bg-white/85 p-4 shadow-soft"
+            >
+              <div className="flex items-center gap-2">
+                {icon}
+                <p className="text-xs font-semibold uppercase tracking-[0.15em] text-stone-400">
+                  {label}
+                </p>
+              </div>
+              <p className="mt-2 text-sm font-semibold text-primary">{value}</p>
+            </div>
+          ))}
+        </motion.div>
       </motion.div>
     </section>
   );
