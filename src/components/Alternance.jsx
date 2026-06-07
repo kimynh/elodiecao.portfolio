@@ -104,8 +104,8 @@ export default function Alternance() {
                 Stagiaire développement web
               </p>
               <p className="mt-3 text-sm leading-6 text-stone-600">
-                Stage de 3 mois autour du développement d'une application web —
-                back-office et front-office — encadré par le directeur technique.
+                Stage de 3 mois autour du développement d'une application web :
+                back-office et front-office, encadré par le directeur technique.
               </p>
             </div>
             <div className="flex flex-wrap gap-2">
