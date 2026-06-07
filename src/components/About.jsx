@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Sparkles, Building2, GraduationCap } from "lucide-react";
 
 export default function About() {
   return (
@@ -16,6 +17,32 @@ export default function About() {
           <h2 className="section-title mt-5">
             Un profil hybride entre rigueur académique, sens du produit et exécution technique.
           </h2>
+          <div className="mt-8 flex flex-col gap-3">
+            <div className="flex items-center gap-3 rounded-2xl border border-stone-200/80 bg-white/80 px-4 py-3">
+              <Sparkles size={16} className="shrink-0 text-emerald-500" />
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-stone-400">En cours</p>
+                <p className="text-sm font-semibold text-primary">Stage · Hyvilo</p>
+              </div>
+              <span className="ml-auto h-2 w-2 rounded-full bg-emerald-400" />
+            </div>
+            <div className="flex items-center gap-3 rounded-2xl border border-stone-200/80 bg-white/80 px-4 py-3">
+              <Building2 size={16} className="shrink-0 text-accent" />
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-stone-400">Sept. 2026 · 24 mois</p>
+                <p className="text-sm font-semibold text-primary">Alternance · Capgemini</p>
+              </div>
+              <span className="ml-auto h-2 w-2 rounded-full bg-accent/60" />
+            </div>
+            <div className="flex items-center gap-3 rounded-2xl border border-stone-200/80 bg-white/80 px-4 py-3">
+              <GraduationCap size={16} className="shrink-0 text-accent" />
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-stone-400">Rentrée 2026</p>
+                <p className="text-sm font-semibold text-primary">Master MIAGE · Panthéon-Sorbonne</p>
+              </div>
+              <span className="ml-auto h-2 w-2 rounded-full bg-accent/60" />
+            </div>
+          </div>
         </div>
         <div className="soft-card p-6 md:p-8">
           <p className="text-base leading-8 text-stone-600 md:text-lg">
