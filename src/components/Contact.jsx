@@ -13,9 +13,9 @@ export default function Contact() {
         className="soft-card p-8 md:p-10"
       >
         <span className="eyebrow">Contact</span>
-        <h2 className="section-title mt-5">Discutons de votre équipe, de vos projets ou d’une alternance.</h2>
+        <h2 className="section-title mt-5">Discutons de vos projets, de vos équipes ou d’une collaboration.</h2>
         <p className="section-copy">
-          Je suis ouverte aux échanges autour des systèmes d’information, du développement et des opportunités pour 2026.
+          Je suis ouverte aux échanges autour des systèmes d’information, du développement et de toute opportunité future.
         </p>
         <div className="mt-8 rounded-2xl border border-zinc-800 bg-zinc-900 px-5 py-4 font-mono text-sm">
           <div className="mb-3 flex items-center gap-1.5">
@@ -28,11 +28,10 @@ export default function Contact() {
             <span className="text-green-400">elodie</span>
             <span className="text-zinc-500">@portfolio</span>
             <span className="text-zinc-400">:~$ </span>
-            <span className="text-zinc-200">git commit -m </span>
-            <span className="text-emerald-400">"open to alternance offers"</span>
+            <span className="text-zinc-200">git log --oneline</span>
           </p>
           <p className="mt-1 text-zinc-500">
-            <span className="text-green-500">✓</span> 1 commit prêt — septembre 2026
+            <span className="text-green-500">✓</span> alternance trouvée — Hyvilo, depuis mai 2026
           </p>
         </div>
         <div className="mt-6 flex flex-col gap-4">
