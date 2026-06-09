@@ -12,6 +12,9 @@ import Footer from "./components/Footer";
 import Loader from "./components/Loader";
 import ScrollToTop from "./components/ScrollToTop";
 import SectionDivider from "./components/SectionDivider";
+import FloatingOrbs from "./components/FloatingOrbs";
+import ScrollProgress from "./components/ScrollProgress";
+import AmbientParticles from "./components/AmbientParticles";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -23,6 +26,9 @@ function App() {
 
   return (
     <div className="min-h-screen font-sans text-text relative overflow-x-hidden">
+      <ScrollProgress />
+      <FloatingOrbs />
+      <AmbientParticles />
       {loading && <Loader />}
       <Navbar />
       <main className="relative z-10 pt-24 pb-8">
