@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 const orbs = [
   {
     style: { left: "-80px", top: "4vh", width: 560, height: 560 },
-    color: "rgba(79, 70, 229, 0.18)",
+    color: "rgba(251, 146, 60, 0.16)",
     animate: { y: [-25, 25, -25], x: [-10, 10, -10] },
     duration: 20, delay: 0,
   },
@@ -16,7 +16,7 @@ const orbs = [
   },
   {
     style: { left: "-60px", top: "50vh", width: 420, height: 420 },
-    color: "rgba(79, 70, 229, 0.14)",
+    color: "rgba(52, 211, 153, 0.13)",
     animate: { y: [-18, 18, -18], x: [-8, 8, -8] },
     duration: 17, delay: 7,
   },
