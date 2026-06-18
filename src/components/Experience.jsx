@@ -1,137 +1,336 @@
-import React from "react";
+import React, { useRef } from "react";
 import { motion } from "framer-motion";
-import { Briefcase, Building2, Mic, School, Sparkles } from "lucide-react";
+import { Briefcase, Building2, Mic, School, Sparkles, MapPin, Calendar } from "lucide-react";
 
 const experiences = [
   {
-    icon: <Building2 size={20} className="text-accent" />,
+    Icon: Building2,
     title: "Ingénieure Logiciel – Alternance",
     org: "Capgemini",
     date: "Septembre 2026 – Septembre 2028",
     location: "Paris · 24 mois",
-    description: "Intégration des équipes spécialisées en ingénierie logicielle et architectures Cloud, en parallèle du Master MIAGE à Panthéon-Sorbonne.",
+    description:
+      "Intégration des équipes spécialisées en ingénierie logicielle et architectures Cloud, en parallèle du Master MIAGE à Panthéon-Sorbonne.",
     stack: ["Ingénierie logicielle", "Cloud", "Master MIAGE", "Alternance 24 mois"],
     status: "À venir",
+    type: "upcoming",
+    accent: "#4f46e5",
   },
   {
-    icon: <Sparkles size={20} className="text-accent" />,
-    title: "Stagiaire développement web – Hyvilo",
+    Icon: Sparkles,
+    title: "Stagiaire développement web",
     org: "Hyvilo",
-    date: "20 mai 2026 – 14 août 2026",
+    date: "20 mai – 14 août 2026",
     location: "Paris 15e · Sur site",
-    description: "Stage encadré par Yves Tannier, directeur technique, autour du développement d’une application web et de la conception de composants pour le back-office et le front-office.",
+    description:
+      "Développement d'une application web fullstack encadré par le directeur technique, Yves Tannier.",
     details: [
-      "Développement front-end en JavaScript et React pour les interfaces back-office et front-office.",
-      "Conception de composants back-end en Python et Django.",
-      "Écriture de tests unitaires et fonctionnels, avec versioning Git et CI/CD sur GitLab.",
+      "Front-end en React / JavaScript pour les interfaces back-office et front-office.",
+      "Composants back-end en Python / Django.",
+      "Tests unitaires & fonctionnels, CI/CD sur GitLab.",
     ],
     stack: ["React", "JavaScript", "Python", "Django", "Git", "GitLab CI/CD"],
     status: "En cours",
+    type: "active",
+    accent: "#059669",
   },
   {
-    icon: <Mic size={22} className="text-primary" />,
-    title: "Étudiante médiatrice scientifique – Exposition “Un monde de maths”",
+    Icon: Mic,
+    title: "Médiatrice scientifique",
     org: "Université Paris Cité",
     date: "Mars 2026",
     location: "Paris 6e · Sur site",
-    description: "Participation à une exposition de vulgarisation scientifique organisée par l’UFR à la Galerie Saint-Germain.",
+    description:
+      'Exposition "Un monde de maths" à la Galerie Saint-Germain — vulgarisation scientifique auprès de classes de lycée.',
     details: [
-      "Accompagnement de classes de 3e et de Seconde lors de visites pédagogiques.",
-      "Explication de notions mathématiques avec des exemples concrets et accessibles.",
-      "Animation d’ateliers interactifs et mise en pratique auprès des visiteurs.",
-      "Contribution à la valorisation des mathématiques et de leurs applications dans la vie quotidienne.",
+      "Animation d'ateliers interactifs de mathématiques.",
+      "Vulgarisation de notions avec des exemples concrets et accessibles.",
+      "Contribution à la valorisation des maths dans la vie quotidienne.",
     ],
     stack: ["Médiation scientifique", "Animation", "Prise de parole"],
+    type: "other",
+    accent: "#db2777",
   },
   {
-    icon: <Briefcase size={22} className="text-primary" />,
-    title: "Consultante en informatique – Stage",
-    org: "ERPsoft Consulting",
-    date: "Juillet 2024 – Août 2024",
-    location: "Soisy-sur-Seine · Sur site",
-    description: "Création d’outils d’analyse pour la gestion des stocks de composants Airbus.",
-    details: [
-      "Analyse et suivi des données BCP liées à la migration SAP/EIS d'Airbus : stocks, commandes, configuration système",
-      "Automatisation VBA et traitement Excel des fichiers de suivi techniques",
-      "Création de logiciels d'analyse pour la gestion des stocks de composants Airbus",
-    ],
-    stack: ["VBA", "Analyse de données", "Gestion de projet", "Processus métier", "Excel"],
-  },
-  {
-    icon: <School size={22} className="text-primary" />,
-    title: "L3 MIAGE – Université Paris Cité",
+    Icon: School,
+    title: "Licence Informatique parcours MIAGE",
     org: "Université Paris Cité",
     date: "2025 – 2026",
     location: "Paris",
-    description: "Formation MIAGE centrée sur le développement, la gestion de projet, la data et les systèmes d’information.",
-    stack: ["Développement", "Gestion de projet", "Data", "Systèmes d’information"],
+    description:
+      "Troisième année de licence MIAGE : développement logiciel, data, gestion de projet et systèmes d'information.",
+    stack: ["Développement", "Gestion de projet", "Data", "Systèmes d'information"],
+    type: "education",
+    accent: "#0369a1",
+  },
+  {
+    Icon: Briefcase,
+    title: "Consultante informatique – Stage",
+    org: "ERPsoft Consulting",
+    date: "Juillet – Août 2024",
+    location: "Soisy-sur-Seine · Sur site",
+    description:
+      "Création d'outils d'analyse pour la gestion des stocks de composants Airbus.",
+    details: [
+      "Analyse des données BCP liées à la migration SAP/EIS d'Airbus : stocks, commandes, configuration.",
+      "Automatisation VBA et traitement Excel des fichiers de suivi techniques.",
+    ],
+    stack: ["VBA", "Excel", "Analyse de données", "Gestion de projet"],
+    type: "past",
+    accent: "#b45309",
   },
 ];
 
-const item = {
-  hidden: { opacity: 0, y: 30 },
-  show: { opacity: 1, y: 0 },
-};
+function TimelineDot({ type, accent }) {
+  return (
+    <div className="relative flex items-center justify-center w-10 h-10 shrink-0">
+      {type === "active" && (
+        <span
+          className="absolute inset-0 rounded-full animate-ping opacity-25"
+          style={{ backgroundColor: accent }}
+        />
+      )}
+      <div
+        className="relative z-10 w-4 h-4 rounded-full border-[3px] border-white"
+        style={{
+          backgroundColor: accent,
+          boxShadow: `0 0 0 3px ${accent}30, 0 4px 16px ${accent}50`,
+        }}
+      />
+    </div>
+  );
+}
+
+function StatusBadge({ status, type, accent }) {
+  if (!status) return null;
+  return (
+    <span
+      className="inline-flex items-center gap-1.5 rounded-full px-2.5 py-[3px] text-[10px] font-bold uppercase tracking-[0.18em] mb-3"
+      style={{
+        backgroundColor: `${accent}10`,
+        color: accent,
+        border: `1px solid ${accent}30`,
+      }}
+    >
+      {type === "active" && (
+        <span className="relative flex h-1.5 w-1.5">
+          <span
+            className="animate-ping absolute inline-flex h-full w-full rounded-full opacity-75"
+            style={{ backgroundColor: accent }}
+          />
+          <span
+            className="relative inline-flex h-1.5 w-1.5 rounded-full"
+            style={{ backgroundColor: accent }}
+          />
+        </span>
+      )}
+      {status}
+    </span>
+  );
+}
+
+function ExperienceCard({ exp, align = "left" }) {
+  const { Icon, title, org, date, location, description, details, stack, status, type, accent } = exp;
+
+  return (
+    <motion.div
+      whileHover={{ y: -4 }}
+      transition={{ duration: 0.2, ease: "easeOut" }}
+      className="relative soft-card overflow-hidden w-full group cursor-default"
+    >
+      {/* Gradient top accent */}
+      <div
+        className="absolute inset-x-0 top-0 h-[3px] transition-opacity duration-300 opacity-70 group-hover:opacity-100"
+        style={{ background: `linear-gradient(90deg, ${accent}, ${accent}00)` }}
+      />
+
+      <div className="p-5 md:p-6">
+        <StatusBadge status={status} type={type} accent={accent} />
+
+        {/* Header */}
+        <div className="flex items-start gap-3">
+          <div
+            className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl mt-0.5"
+            style={{ backgroundColor: `${accent}12` }}
+          >
+            <Icon size={18} style={{ color: accent }} />
+          </div>
+          <div className="min-w-0">
+            <h3 className="text-[15px] font-semibold leading-snug text-primary">{title}</h3>
+            <p className="text-sm font-medium text-stone-500 mt-0.5">{org}</p>
+          </div>
+        </div>
+
+        {/* Meta */}
+        <div className="mt-3.5 flex flex-wrap gap-x-4 gap-y-1 text-[11px] font-medium text-stone-400">
+          <span className="flex items-center gap-1.5">
+            <Calendar size={10} />
+            {date}
+          </span>
+          <span className="flex items-center gap-1.5">
+            <MapPin size={10} />
+            {location}
+          </span>
+        </div>
+
+        {/* Description */}
+        <p className="mt-3 text-sm leading-relaxed text-stone-600">{description}</p>
+
+        {/* Details */}
+        {details && (
+          <ul className="mt-3 space-y-1.5 text-[13px] text-stone-500 leading-relaxed">
+            {details.map((d, j) => (
+              <li key={j} className="flex gap-2.5">
+                <span
+                  className="mt-[7px] h-1 w-1 shrink-0 rounded-full"
+                  style={{ backgroundColor: accent }}
+                />
+                {d}
+              </li>
+            ))}
+          </ul>
+        )}
+
+        {/* Stack tags */}
+        <div className="mt-4 flex flex-wrap gap-1.5">
+          {stack.map((tag) => (
+            <span
+              key={tag}
+              className="rounded-full px-2.5 py-[3px] text-[10px] font-bold uppercase tracking-[0.12em]"
+              style={{
+                backgroundColor: `${accent}08`,
+                border: `1px solid ${accent}25`,
+                color: accent,
+              }}
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
+      </div>
+    </motion.div>
+  );
+}
 
 export default function Experience() {
+  const lineRef = useRef(null);
+
   return (
     <section id="experience" className="section-shell">
+      {/* Header */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.7 }}
-        className="mb-10"
+        className="mb-14"
       >
-        <span className="eyebrow">Expérience</span>
-        <h2 className="section-title mt-5">Stage chez Hyvilo, alternance chez Capgemini, Master à Panthéon-Sorbonne.</h2>
+        <span className="eyebrow">Parcours</span>
+        <h2 className="section-title mt-5">
+          Stage chez Hyvilo, alternance chez Capgemini,{" "}
+          <br className="hidden md:block" />
+          Master à Panthéon-Sorbonne.
+        </h2>
       </motion.div>
-      <div className="relative flex flex-col gap-5 pl-4 md:pl-8">
-        <div className="absolute left-0 top-2 h-[calc(100%-0.5rem)] w-px bg-stone-300 md:left-3" />
-        {experiences.map((exp) => (
+
+      {/* Timeline container */}
+      <div className="relative" ref={lineRef}>
+
+        {/* ── Animated line ─────────────────────────────────── */}
+        {/* Mobile: left-side line */}
+        <div className="absolute left-[1.2rem] top-0 bottom-0 w-px overflow-hidden md:hidden">
           <motion.div
-            key={exp.title}
-            variants={item}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true }}
-            className="soft-card relative ml-3 flex items-start gap-4 p-6"
-          >
-            <div className="absolute -left-7 top-8 h-3 w-3 rounded-full border-4 border-[#f5ede2] bg-primary md:-left-[2.15rem]" />
-            <div className="mt-1 flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-[#f4efe8]">
-              {exp.icon}
-            </div>
-            <div className="flex-1">
-              {exp.status ? <span className="pill-tag">{exp.status}</span> : null}
-              <h3 className="mt-3 text-xl font-semibold text-primary">{exp.title}</h3>
-              <div className="mt-1 text-sm font-medium uppercase tracking-[0.16em] text-stone-400">{exp.date}</div>
-              <p className="mt-1 text-sm font-semibold text-stone-500">{exp.org} · {exp.location}</p>
-              <div className="mt-3 text-stone-600">{exp.description}</div>
-              {exp.details ? (
-                <ul className="mt-4 space-y-2 text-sm leading-7 text-stone-600">
-                  {exp.details.map((detail) => (
-                    <li key={detail} className="flex gap-3">
-                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" />
-                      <span>{detail}</span>
-                    </li>
-                  ))}
-                </ul>
-              ) : null}
-              {exp.stack ? (
-                <div className="mt-5 flex flex-wrap gap-2">
-                  {exp.stack.map((item) => (
-                    <span
-                      key={item}
-                      className="rounded-full border border-stone-200 bg-white px-3 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-stone-500"
-                    >
-                      {item}
-                    </span>
-                  ))}
+            className="w-full h-full origin-top"
+            initial={{ scaleY: 0 }}
+            whileInView={{ scaleY: 1 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 1.6, ease: [0.22, 1, 0.36, 1] }}
+            style={{
+              background:
+                "linear-gradient(to bottom, #4f46e5 0%, #c4b5fd 35%, #d6d3d1 70%, transparent 100%)",
+            }}
+          />
+        </div>
+        {/* Desktop: center line */}
+        <div className="absolute hidden md:block left-1/2 -translate-x-1/2 top-0 bottom-0 w-px overflow-hidden">
+          <motion.div
+            className="w-full h-full origin-top"
+            initial={{ scaleY: 0 }}
+            whileInView={{ scaleY: 1 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 1.8, ease: [0.22, 1, 0.36, 1] }}
+            style={{
+              background:
+                "linear-gradient(to bottom, #4f46e5 0%, #c4b5fd 35%, #d6d3d1 70%, transparent 100%)",
+            }}
+          />
+        </div>
+
+        {/* ── Items ─────────────────────────────────────────── */}
+        <div className="flex flex-col gap-7 md:gap-10">
+          {experiences.map((exp, i) => {
+            const isLeft = i % 2 === 0;
+
+            return (
+              <motion.div
+                key={exp.title}
+                initial={{ opacity: 0, y: 22 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-60px" }}
+                transition={{
+                  duration: 0.55,
+                  delay: i * 0.07,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
+                className={`
+                  relative grid items-start
+                  grid-cols-[2.4rem_1fr]
+                  md:grid-cols-[1fr_5rem_1fr]
+                `}
+              >
+                {/* ── MOBILE: dot (col 1) ── */}
+                <div className="flex justify-center pt-4 z-10 md:hidden">
+                  <TimelineDot type={exp.type} accent={exp.accent} />
                 </div>
-              ) : null}
-            </div>
-          </motion.div>
-        ))}
+
+                {/* ── DESKTOP: left card (col 1) ── */}
+                <div className="hidden md:flex items-start justify-end pr-5">
+                  {isLeft ? (
+                    <ExperienceCard exp={exp} align="right" />
+                  ) : (
+                    /* Year label for right-side items — subtle marker */
+                    <div className="self-center ml-auto">
+                      <span className="text-[11px] font-semibold text-stone-300 tracking-widest select-none">
+                        {exp.date.match(/\d{4}/g)?.slice(-1)[0]}
+                      </span>
+                    </div>
+                  )}
+                </div>
+
+                {/* ── MOBILE: card (col 2) / DESKTOP: dot (col 2) ── */}
+                <div className="pl-3 md:hidden">
+                  <ExperienceCard exp={exp} />
+                </div>
+                <div className="hidden md:flex justify-center items-start pt-4 z-10">
+                  <TimelineDot type={exp.type} accent={exp.accent} />
+                </div>
+
+                {/* ── DESKTOP: right card (col 3) ── */}
+                <div className="hidden md:flex items-start pl-5">
+                  {!isLeft ? (
+                    <ExperienceCard exp={exp} align="left" />
+                  ) : (
+                    <div className="self-center">
+                      <span className="text-[11px] font-semibold text-stone-300 tracking-widest select-none">
+                        {exp.date.match(/\d{4}/g)?.slice(-1)[0]}
+                      </span>
+                    </div>
+                  )}
+                </div>
+              </motion.div>
+            );
+          })}
+        </div>
       </div>
     </section>
   );
