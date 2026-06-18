@@ -17,6 +17,8 @@ import {
   SiSubversion,
 } from "react-icons/si";
 import { Users } from "lucide-react";
+import excelLogo from "../assets/excel-logo.png";
+import mageLogo from "../assets/mage-logo.png";
 
 const categories = [
   {
@@ -45,8 +47,8 @@ const categories = [
     label: "Data",
     skills: [
       { Icon: SiPostgresql,     name: "PostgreSQL",        color: "#4169E1" },
-      {                         name: "Excel",             color: "#217346" },
-      {                         name: "Mage AI",           color: "#7c3aed" },
+      { img: excelLogo,         name: "Excel",             color: "#217346" },
+      { img: mageLogo,          name: "Mage AI",           color: "#5c5cf0" },
       {                         name: "Analyse de données",color: "#0369a1" },
     ],
   },
@@ -88,7 +90,7 @@ const categoryPairs = [
 ];
 
 function SkillBadge({ skill, delay = 0 }) {
-  const { Icon, name, color } = skill;
+  const { Icon, img, name, color } = skill;
   return (
     <motion.span
       initial={{ opacity: 0, scale: 0.9 }}
@@ -104,6 +106,7 @@ function SkillBadge({ skill, delay = 0 }) {
       }}
     >
       {Icon && <Icon size={15} style={{ color, flexShrink: 0 }} />}
+      {img && <img src={img} alt={name} className="h-4 w-4 object-contain" style={{ flexShrink: 0 }} />}
       {name}
     </motion.span>
   );
