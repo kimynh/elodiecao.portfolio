@@ -19,7 +19,7 @@ const experiences = [
     stack: ["Ingénierie logicielle", "Cloud", "Master MIAGE", "Alternance 24 mois"],
     status: "À venir",
     type: "upcoming",
-    accent: "#4f46e5",
+    accent: "#0070ac",
   },
   {
     Icon: GraduationCap,
@@ -27,13 +27,13 @@ const experiences = [
     title: "Master MIAGE",
     org: "Université Paris 1 Panthéon-Sorbonne",
     date: "Septembre 2026 – Septembre 2028",
-    location: "Paris · Sur site",
+    location: "Paris - 75013",
     description:
       "Master MIAGE en alternance chez Capgemini, centré sur la gestion de projet, les systèmes d'information et l'ingénierie logicielle.",
     stack: ["Master MIAGE", "Alternance", "Gestion de projet", "SI", "Ingénierie logicielle"],
     status: "À venir",
     type: "upcoming",
-    accent: "#7c3aed",
+    accent: "#ed9b28",
   },
   {
     Icon: Sparkles,
@@ -41,7 +41,7 @@ const experiences = [
     title: "Développeuse Data Engineer",
     org: "Hyvilo",
     date: "Mai 2026 – aujourd'hui · 2 mois",
-    location: "Paris · Sur site",
+    location: "Paris - Sur site",
     description:
       "Conception et développement de pipelines ETL de données dans un environnement de production.",
     details: [
@@ -55,7 +55,7 @@ const experiences = [
     stack: ["Python", "pandas", "Mage AI", "API REST", "SFTP", "Git", "GitLab CI/CD"],
     status: "En cours",
     type: "active",
-    accent: "#059669",
+    accent: "#01a7ed",
   },
   {
     Icon: Mic,
@@ -73,7 +73,7 @@ const experiences = [
     ],
     stack: ["Médiation scientifique", "Animation", "Prise de parole"],
     type: "other",
-    accent: "#db2777",
+    accent: "#8a1438",
   },
   {
     Icon: School,
@@ -86,7 +86,7 @@ const experiences = [
       "Troisième année de licence MIAGE : développement logiciel, data, gestion de projet et systèmes d'information.",
     stack: ["Développement", "Gestion de projet", "Data", "Systèmes d'information"],
     type: "education",
-    accent: "#0369a1",
+    accent: "#8a1438",
   },
   {
     Icon: School,
@@ -99,7 +99,7 @@ const experiences = [
       "Deuxième année de licence Informatique : développement logiciel, bases de données, systèmes d'information et gestion de projet.",
     stack: ["Java", "C", "Développement web", "SGBD", "Systèmes d'information", "Unity", "Gestion de projet", "Systèmes d'exploitation"],
     type: "education",
-    accent: "#0369a1",
+    accent: "#8a1438",
   },
   {
     Icon: School,
@@ -112,7 +112,7 @@ const experiences = [
       "Première année de licence pluridisciplinaire Mathématiques et Informatique : programmation, bases de données, UML et gestion de projet.",
     stack: ["C", "C#", "Java", "Python", "SQL", "PostgreSQL", "HTML", "Unity", "Unreal Engine 4", "UML", "Gestion de projet"],
     type: "education",
-    accent: "#0369a1",
+    accent: "#8a1438",
   },
   {
     Icon: Briefcase,
@@ -128,7 +128,7 @@ const experiences = [
     ],
     stack: ["VBA", "Excel", "Analyse de données", "Gestion de projet"],
     type: "past",
-    accent: "#b45309",
+    accent: "#339c10",
   },
 ];
 
