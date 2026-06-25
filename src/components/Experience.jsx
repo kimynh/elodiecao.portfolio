@@ -56,7 +56,7 @@ const experiences = [
   },
   {
     Icon: School,
-    title: "Licence Informatique parcours MIAGE",
+    title: "Licence Informatique parcours MIAGE - L3",
     org: "Université Paris Cité",
     date: "2025 – 2026",
     location: "Paris - 75006",
@@ -68,13 +68,25 @@ const experiences = [
   },
   {
     Icon: School,
-    title: "L2 Licence Informatique et Applications",
+    title: "Licence Informatique et Applications - L2",
     org: "Université Paris Cité",
     date: "Septembre 2024 – Septembre 2025",
     location: "Paris · Sur site",
     description:
       "Deuxième année de licence Informatique : développement logiciel, bases de données, systèmes d'information et gestion de projet.",
     stack: ["Java", "C", "Développement web", "SGBD", "Systèmes d'information", "Unity", "Gestion de projet", "Systèmes d'exploitation"],
+    type: "education",
+    accent: "#0369a1",
+  },
+  {
+    Icon: School,
+    title: "L1 Licence Mathématiques et Informatique",
+    org: "Université Paris Cité",
+    date: "Septembre 2023 – Septembre 2024",
+    location: "Paris · Sur site",
+    description:
+      "Première année de licence pluridisciplinaire Mathématiques et Informatique : programmation, bases de données, UML et gestion de projet.",
+    stack: ["C", "C#", "Java", "Python", "SQL", "PostgreSQL", "HTML", "Unity", "Unreal Engine 4", "UML", "Gestion de projet"],
     type: "education",
     accent: "#0369a1",
   },
