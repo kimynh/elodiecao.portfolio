@@ -140,7 +140,7 @@ export default function Hero() {
                   Focus
                 </p>
                 <p className="mt-2 text-lg font-semibold text-primary">
-                  React, Django, CI/CD
+                  Python, Mage AI, CI/CD
                 </p>
               </div>
             </div>

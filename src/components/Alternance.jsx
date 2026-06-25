@@ -101,18 +101,19 @@ export default function Alternance() {
                 Hyvilo
               </h3>
               <p className="mt-1 text-sm font-semibold text-stone-500">
-                Stagiaire développement web
+                Développeuse Data Engineer
               </p>
               <p className="mt-3 text-sm leading-6 text-stone-600">
-                Stage de 3 mois autour du développement d'une application web :
-                back-office et front-office, encadré par le directeur technique.
+                Stage de 3 mois autour de la conception et du développement de
+                pipelines ETL en production, avec Mage AI, Python et intégration
+                de données via API REST et SFTP.
               </p>
             </div>
             <div className="flex flex-wrap gap-2">
               <span className="pill-tag">Mai – Août 2026</span>
-              <span className="pill-tag">React</span>
-              <span className="pill-tag">Django</span>
-              <span className="pill-tag">GitLab CI/CD</span>
+              <span className="pill-tag">Python</span>
+              <span className="pill-tag">Mage AI</span>
+              <span className="pill-tag">ETL</span>
             </div>
           </motion.div>
 
