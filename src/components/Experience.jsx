@@ -40,7 +40,7 @@ const experiences = [
     logo: hyviloLogo,
     title: "Développeuse Data Engineer",
     org: "Hyvilo",
-    date: "Mai 2026 – aujourd'hui · 2 mois",
+    date: "Mai 2026 – aujourd'hui",
     location: "Paris - Sur site",
     description:
       "Conception et développement de pipelines ETL de données dans un environnement de production.",
