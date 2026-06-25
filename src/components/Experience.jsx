@@ -13,7 +13,7 @@ const experiences = [
     title: "Ingénieure Logiciel – Alternance",
     org: "Capgemini",
     date: "Septembre 2026 – Septembre 2028",
-    location: "Paris · 24 mois",
+    location: "Issy les moulineaux · Hybride",
     description:
       "Intégration des équipes spécialisées en ingénierie logicielle et architectures Cloud, en parallèle du Master MIAGE à Panthéon-Sorbonne.",
     stack: ["Ingénierie logicielle", "Cloud", "Master MIAGE", "Alternance 24 mois"],
@@ -41,7 +41,7 @@ const experiences = [
     title: "Développeuse Data Engineer",
     org: "Hyvilo",
     date: "Mai 2026 – aujourd'hui · 2 mois",
-    location: "Paris, Île-de-France · Sur site",
+    location: "Paris · Sur site",
     description:
       "Conception et développement de pipelines ETL de données dans un environnement de production.",
     details: [
@@ -63,7 +63,7 @@ const experiences = [
     title: "Médiatrice scientifique",
     org: "Université Paris Cité",
     date: "Mars 2026",
-    location: "Paris 6e · Sur site",
+    location: "Paris - 75006",
     description:
       'Exposition "Un monde de maths" à la Galerie Saint-Germain — vulgarisation scientifique auprès de classes de lycée.',
     details: [
