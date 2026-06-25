@@ -1,10 +1,15 @@
 import React, { useRef } from "react";
 import { motion } from "framer-motion";
-import { Briefcase, Building2, Mic, School, Sparkles, MapPin, Calendar } from "lucide-react";
+import { Briefcase, Building2, GraduationCap, Mic, School, Sparkles, MapPin, Calendar } from "lucide-react";
+import hyviloLogo from "../assets/hyvilo.png";
+import capgeminiLogo from "../assets/Capgemini_Logo.svg.png";
+import parisCiteLogo from "../assets/logo-pc.svg";
+import sorbonneLogo from "../assets/sorbonne-logo.png";
 
 const experiences = [
   {
     Icon: Building2,
+    logo: capgeminiLogo,
     title: "Ingénieure Logiciel – Alternance",
     org: "Capgemini",
     date: "Septembre 2026 – Septembre 2028",
@@ -17,7 +22,22 @@ const experiences = [
     accent: "#4f46e5",
   },
   {
+    Icon: GraduationCap,
+    logo: sorbonneLogo,
+    title: "Master MIAGE",
+    org: "Université Paris 1 Panthéon-Sorbonne",
+    date: "Septembre 2026 – Septembre 2028",
+    location: "Paris · Sur site",
+    description:
+      "Master MIAGE en alternance chez Capgemini, centré sur la gestion de projet, les systèmes d'information et l'ingénierie logicielle.",
+    stack: ["Master MIAGE", "Alternance", "Gestion de projet", "SI", "Ingénierie logicielle"],
+    status: "À venir",
+    type: "upcoming",
+    accent: "#7c3aed",
+  },
+  {
     Icon: Sparkles,
+    logo: hyviloLogo,
     title: "Développeuse Data Engineer",
     org: "Hyvilo",
     date: "Mai 2026 – aujourd'hui · 2 mois",
@@ -39,6 +59,7 @@ const experiences = [
   },
   {
     Icon: Mic,
+    logo: parisCiteLogo,
     title: "Médiatrice scientifique",
     org: "Université Paris Cité",
     date: "Mars 2026",
@@ -56,6 +77,7 @@ const experiences = [
   },
   {
     Icon: School,
+    logo: parisCiteLogo,
     title: "L3 Licence Informatique parcours MIAGE",
     org: "Université Paris Cité",
     date: "2025 – 2026",
@@ -68,6 +90,7 @@ const experiences = [
   },
   {
     Icon: School,
+    logo: parisCiteLogo,
     title: "L2 Licence Informatique et Applications",
     org: "Université Paris Cité",
     date: "Septembre 2024 – Septembre 2025",
@@ -80,6 +103,7 @@ const experiences = [
   },
   {
     Icon: School,
+    logo: parisCiteLogo,
     title: "L1 Licence Mathématiques et Informatique",
     org: "Université Paris Cité",
     date: "Septembre 2023 – Septembre 2024",
@@ -157,7 +181,7 @@ function StatusBadge({ status, type, accent }) {
 }
 
 function ExperienceCard({ exp, align = "left" }) {
-  const { Icon, title, org, date, location, description, details, stack, status, type, accent } = exp;
+  const { Icon, logo, title, org, date, location, description, details, stack, status, type, accent } = exp;
 
   return (
     <motion.div
@@ -177,10 +201,13 @@ function ExperienceCard({ exp, align = "left" }) {
         {/* Header */}
         <div className="flex items-start gap-3">
           <div
-            className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl mt-0.5"
-            style={{ backgroundColor: `${accent}12` }}
+            className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl mt-0.5 overflow-hidden ${logo ? "bg-white border border-stone-100 shadow-sm p-1" : ""}`}
+            style={!logo ? { backgroundColor: `${accent}12` } : {}}
           >
-            <Icon size={18} style={{ color: accent }} />
+            {logo
+              ? <img src={logo} alt={org} className="h-full w-full object-contain" />
+              : <Icon size={18} style={{ color: accent }} />
+            }
           </div>
           <div className="min-w-0">
             <h3 className="text-[15px] font-semibold leading-snug text-primary">{title}</h3>
