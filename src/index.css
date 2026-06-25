@@ -4,7 +4,7 @@
 
 :root {
   color: #221f1a;
-  background: #f6f0e8;
+  background: #fcf7f4;
 }
 
 body {
@@ -12,7 +12,7 @@ body {
   background:
     radial-gradient(circle at top left, rgba(255, 255, 255, 0.9), transparent 30%),
     radial-gradient(circle at top right, rgba(79, 70, 229, 0.08), transparent 24%),
-    linear-gradient(180deg, #fbf7f1 0%, #f5ede2 52%, #f2eadf 100%);
+    linear-gradient(180deg, #fcf7f4 0%, #fcf7f4 52%, #fcf7f4 100%);
   color: #221f1a;
   min-height: 100vh;
 }
