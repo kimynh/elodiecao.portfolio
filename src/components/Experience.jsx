@@ -10,6 +10,7 @@ const experiences = [
   {
     Icon: Building2,
     logo: capgeminiLogo,
+    duo: "alternance",
     title: "Ingénieure Logiciel – Alternance",
     org: "Capgemini",
     date: "Septembre 2026 – Septembre 2028",
@@ -24,6 +25,7 @@ const experiences = [
   {
     Icon: GraduationCap,
     logo: sorbonneLogo,
+    duo: "alternance",
     title: "Master MIAGE",
     org: "Université Paris 1 Panthéon-Sorbonne",
     date: "Septembre 2026 – Septembre 2028",
@@ -322,68 +324,129 @@ export default function Experience() {
 
         {/* ── Items ─────────────────────────────────────────── */}
         <div className="flex flex-col gap-7 md:gap-10">
-          {experiences.map((exp, i) => {
-            const isLeft = i % 2 === 0;
+          {(() => {
+            // Pre-process: group duo items into paired rows
+            const rows = [];
+            let altIdx = 0;
+            let i = 0;
+            while (i < experiences.length) {
+              const exp = experiences[i];
+              const next = experiences[i + 1];
+              if (exp.duo && next?.duo === exp.duo) {
+                rows.push({ type: "duo", left: exp, right: next, baseI: i });
+                i += 2;
+                altIdx++;
+              } else {
+                rows.push({ type: "single", exp, isLeft: altIdx % 2 === 0, baseI: i });
+                altIdx++;
+                i++;
+              }
+            }
 
-            return (
-              <motion.div
-                key={exp.title}
-                initial={{ opacity: 0, y: 22 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-60px" }}
-                transition={{
-                  duration: 0.55,
-                  delay: i * 0.07,
-                  ease: [0.22, 1, 0.36, 1],
-                }}
-                className={`
-                  relative grid items-start
-                  grid-cols-[2.4rem_1fr]
-                  md:grid-cols-[1fr_5rem_1fr]
-                `}
-              >
-                {/* ── MOBILE: dot (col 1) ── */}
-                <div className="flex justify-center pt-4 z-10 md:hidden">
-                  <TimelineDot type={exp.type} accent={exp.accent} />
-                </div>
-
-                {/* ── DESKTOP: left card (col 1) ── */}
-                <div className="hidden md:flex items-start justify-end pr-5">
-                  {isLeft ? (
-                    <ExperienceCard exp={exp} align="right" />
-                  ) : (
-                    /* Year label for right-side items — subtle marker */
-                    <div className="self-center ml-auto">
-                      <span className="text-[11px] font-semibold text-stone-300 tracking-widest select-none">
-                        {exp.date.match(/\d{4}/g)?.slice(-1)[0]}
-                      </span>
+            return rows.map((row) => {
+              /* ── DUO ROW: two cards side by side ── */
+              if (row.type === "duo") {
+                return (
+                  <motion.div
+                    key={row.baseI}
+                    initial={{ opacity: 0, y: 22 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-60px" }}
+                    transition={{ duration: 0.55, delay: row.baseI * 0.07, ease: [0.22, 1, 0.36, 1] }}
+                  >
+                    {/* Mobile: stacked */}
+                    <div className="md:hidden flex flex-col gap-5">
+                      {[row.left, row.right].map((exp) => (
+                        <div key={exp.title} className="grid grid-cols-[2.4rem_1fr] items-start">
+                          <div className="flex justify-center pt-4 z-10">
+                            <TimelineDot type={exp.type} accent={exp.accent} />
+                          </div>
+                          <div className="pl-3">
+                            <ExperienceCard exp={exp} />
+                          </div>
+                        </div>
+                      ))}
                     </div>
-                  )}
-                </div>
 
-                {/* ── MOBILE: card (col 2) / DESKTOP: dot (col 2) ── */}
-                <div className="pl-3 md:hidden">
-                  <ExperienceCard exp={exp} />
-                </div>
-                <div className="hidden md:flex justify-center items-start pt-4 z-10">
-                  <TimelineDot type={exp.type} accent={exp.accent} />
-                </div>
-
-                {/* ── DESKTOP: right card (col 3) ── */}
-                <div className="hidden md:flex items-start pl-5">
-                  {!isLeft ? (
-                    <ExperienceCard exp={exp} align="left" />
-                  ) : (
-                    <div className="self-center">
-                      <span className="text-[11px] font-semibold text-stone-300 tracking-widest select-none">
-                        {exp.date.match(/\d{4}/g)?.slice(-1)[0]}
-                      </span>
+                    {/* Desktop: side by side */}
+                    <div className="hidden md:grid md:grid-cols-[1fr_5rem_1fr] items-start">
+                      <div className="flex justify-end pr-5">
+                        <ExperienceCard exp={row.left} />
+                      </div>
+                      {/* Two dots side by side on the center line */}
+                      <div className="flex justify-center items-start pt-5 z-10">
+                        <div className="flex items-center gap-1.5">
+                          <div
+                            className="w-3 h-3 rounded-full border-2 border-white"
+                            style={{ backgroundColor: row.left.accent, boxShadow: `0 0 0 2px ${row.left.accent}35, 0 2px 8px ${row.left.accent}40` }}
+                          />
+                          <div
+                            className="w-3 h-3 rounded-full border-2 border-white"
+                            style={{ backgroundColor: row.right.accent, boxShadow: `0 0 0 2px ${row.right.accent}35, 0 2px 8px ${row.right.accent}40` }}
+                          />
+                        </div>
+                      </div>
+                      <div className="flex pl-5">
+                        <ExperienceCard exp={row.right} />
+                      </div>
                     </div>
-                  )}
-                </div>
-              </motion.div>
-            );
-          })}
+                  </motion.div>
+                );
+              }
+
+              /* ── SINGLE ROW: alternating ── */
+              const { exp, isLeft } = row;
+              return (
+                <motion.div
+                  key={row.baseI}
+                  initial={{ opacity: 0, y: 22 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-60px" }}
+                  transition={{ duration: 0.55, delay: row.baseI * 0.07, ease: [0.22, 1, 0.36, 1] }}
+                  className="relative grid items-start grid-cols-[2.4rem_1fr] md:grid-cols-[1fr_5rem_1fr]"
+                >
+                  {/* Mobile: dot */}
+                  <div className="flex justify-center pt-4 z-10 md:hidden">
+                    <TimelineDot type={exp.type} accent={exp.accent} />
+                  </div>
+
+                  {/* Desktop: left card */}
+                  <div className="hidden md:flex items-start justify-end pr-5">
+                    {isLeft ? (
+                      <ExperienceCard exp={exp} align="right" />
+                    ) : (
+                      <div className="self-center ml-auto">
+                        <span className="text-[11px] font-semibold text-stone-300 tracking-widest select-none">
+                          {exp.date.match(/\d{4}/g)?.slice(-1)[0]}
+                        </span>
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Mobile: card / Desktop: dot */}
+                  <div className="pl-3 md:hidden">
+                    <ExperienceCard exp={exp} />
+                  </div>
+                  <div className="hidden md:flex justify-center items-start pt-4 z-10">
+                    <TimelineDot type={exp.type} accent={exp.accent} />
+                  </div>
+
+                  {/* Desktop: right card */}
+                  <div className="hidden md:flex items-start pl-5">
+                    {!isLeft ? (
+                      <ExperienceCard exp={exp} align="left" />
+                    ) : (
+                      <div className="self-center">
+                        <span className="text-[11px] font-semibold text-stone-300 tracking-widest select-none">
+                          {exp.date.match(/\d{4}/g)?.slice(-1)[0]}
+                        </span>
+                      </div>
+                    )}
+                  </div>
+                </motion.div>
+              );
+            });
+          })()}
         </div>
       </div>
     </section>
