@@ -29,7 +29,7 @@ export default function About() {
             <div className="flex items-center gap-3 rounded-2xl border border-stone-200/80 bg-white/80 px-4 py-3">
               <Building2 size={16} className="shrink-0 text-accent" />
               <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-stone-400">Sept. 2026 · 24 mois</p>
+                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-stone-400">Septembre 2026 · 24 mois</p>
                 <p className="text-sm font-semibold text-primary">Alternance · Capgemini</p>
               </div>
               <span className="ml-auto h-2 w-2 rounded-full bg-accent/60" />
