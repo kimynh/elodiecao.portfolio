@@ -12,7 +12,7 @@ module.exports = {
       },
       colors: {
         primary: "#111827",
-        accent: "#4f46e5",
+        accent: "#d6568c",
         beige: "#f6f0e8",
         cream: "#fffdf8",
         taupe: "#756b5f",
