@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Menu, Sparkles, X } from "lucide-react";
+import { SiGithub } from "react-icons/si";
 
 const navLinks = [
   { href: "#hero", label: "Accueil" },
@@ -43,8 +44,17 @@ export default function Navbar() {
             </a>
           ))}
           <a
+            href="https://github.com/kimynh"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex h-9 w-9 items-center justify-center rounded-full border border-stone-200 bg-white/80 text-stone-600 transition-colors hover:border-stone-300 hover:text-primary"
+            aria-label="Profil GitHub"
+          >
+            <SiGithub size={17} />
+          </a>
+          <a
             href="#experience"
-            className="ml-2 inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-sm font-semibold text-white transition-transform hover:scale-[1.02]"
+            className="ml-1 inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-sm font-semibold text-white transition-transform hover:scale-[1.02]"
           >
             <Sparkles size={16} />
             Stage Hyvilo en cours
@@ -75,6 +85,16 @@ export default function Navbar() {
               {link.label}
             </a>
           ))}
+          <a
+            href="https://github.com/kimynh"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-3 rounded-2xl px-4 py-3 text-base font-medium text-stone-700 transition-colors hover:bg-white hover:text-primary"
+            onClick={() => setOpen(false)}
+          >
+            <SiGithub size={18} />
+            Profil GitHub
+          </a>
           <a
             href="#experience"
             className="rounded-2xl bg-primary px-4 py-3 text-base font-semibold text-white"

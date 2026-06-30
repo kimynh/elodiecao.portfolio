@@ -64,63 +64,63 @@ export default function Hero() {
             transition={{ duration: 1.15, ease: "easeOut" }}
             className="grid gap-4"
           >
-            <div className="rounded-[1.75rem] border border-zinc-800/90 bg-zinc-900 p-5 shadow-soft">
+            <div className="rounded-[1.75rem] border p-5 shadow-soft" style={{ background: "#1e0d18", borderColor: "#4a1e35" }}>
               <div className="mb-4 flex items-center gap-1.5">
-                <span className="h-3 w-3 rounded-full bg-[#ff5f57]" />
-                <span className="h-3 w-3 rounded-full bg-[#febc2e]" />
-                <span className="h-3 w-3 rounded-full bg-[#28c840]" />
-                <span className="ml-4 font-mono text-xs text-zinc-500">profil.js</span>
+                <span className="h-3 w-3 rounded-full" style={{ background: "#ff6b9d" }} />
+                <span className="h-3 w-3 rounded-full" style={{ background: "#ffb3d1" }} />
+                <span className="h-3 w-3 rounded-full" style={{ background: "#ff8fc4" }} />
+                <span className="ml-4 font-mono text-xs" style={{ color: "#7d4063" }}>profil.js</span>
               </div>
               <div className="font-mono text-sm leading-7">
-                <p><span className="italic text-zinc-600">{"// Elodie Cao — 2026"}</span></p>
+                <p><span className="italic" style={{ color: "#6b3355" }}>{"// Elodie Cao — 2026"}</span></p>
                 <p>
-                  <span className="text-indigo-400">const </span>
-                  <span className="text-sky-300">profil</span>
-                  <span className="text-zinc-400"> = {"{"}</span>
+                  <span style={{ color: "#ff6eb4" }}>const </span>
+                  <span style={{ color: "#ffc2d9" }}>profil</span>
+                  <span style={{ color: "#c47a9a" }}> = {"{"}</span>
                 </p>
                 <p className="pl-5">
-                  <span className="text-slate-400">formation</span>
-                  <span className="text-zinc-600">: </span>
-                  <span className="text-emerald-400">"Master MIAGE"</span>
-                  <span className="text-zinc-600">,</span>
+                  <span style={{ color: "#f4a8c7" }}>formation</span>
+                  <span style={{ color: "#8a4060" }}>: </span>
+                  <span style={{ color: "#ffaac8" }}>"Master MIAGE"</span>
+                  <span style={{ color: "#8a4060" }}>,</span>
                 </p>
                 <p className="pl-5">
-                  <span className="text-slate-400">école</span>
-                  <span className="text-zinc-600">: </span>
-                  <span className="text-emerald-400">"Panthéon-Sorbonne"</span>
-                  <span className="text-zinc-600">,</span>
+                  <span style={{ color: "#f4a8c7" }}>école</span>
+                  <span style={{ color: "#8a4060" }}>: </span>
+                  <span style={{ color: "#ffaac8" }}>"Panthéon-Sorbonne"</span>
+                  <span style={{ color: "#8a4060" }}>,</span>
                 </p>
                 <p className="pl-5">
-                  <span className="text-slate-400">contrat</span>
-                  <span className="text-zinc-600">: </span>
-                  <span className="text-emerald-400">"Capgemini — 24 mois"</span>
-                  <span className="text-zinc-600">,</span>
+                  <span style={{ color: "#f4a8c7" }}>contrat</span>
+                  <span style={{ color: "#8a4060" }}>: </span>
+                  <span style={{ color: "#ffaac8" }}>"Capgemini — 24 mois"</span>
+                  <span style={{ color: "#8a4060" }}>,</span>
                 </p>
                 <p className="pl-5">
-                  <span className="text-slate-400">stack</span>
-                  <span className="text-zinc-600">: [</span>
-                  <span className="text-amber-300">"React"</span>
-                  <span className="text-zinc-600">, </span>
-                  <span className="text-amber-300">"Django"</span>
-                  <span className="text-zinc-600">, </span>
-                  <span className="text-amber-300">"Python"</span>
-                  <span className="text-zinc-600">],</span>
+                  <span style={{ color: "#f4a8c7" }}>stack</span>
+                  <span style={{ color: "#8a4060" }}>: [</span>
+                  <span style={{ color: "#ffd6e7" }}>"React"</span>
+                  <span style={{ color: "#8a4060" }}>, </span>
+                  <span style={{ color: "#ffd6e7" }}>"Django"</span>
+                  <span style={{ color: "#8a4060" }}>, </span>
+                  <span style={{ color: "#ffd6e7" }}>"Python"</span>
+                  <span style={{ color: "#8a4060" }}>],</span>
                 </p>
                 <p className="pl-5">
-                  <span className="text-slate-400">alternance</span>
-                  <span className="text-zinc-600">: </span>
-                  <span className="text-orange-400">true</span>
-                  <span className="text-zinc-600">,</span>
+                  <span style={{ color: "#f4a8c7" }}>alternance</span>
+                  <span style={{ color: "#8a4060" }}>: </span>
+                  <span style={{ color: "#ff6eb4" }}>true</span>
+                  <span style={{ color: "#8a4060" }}>,</span>
                 </p>
                 <p className="pl-5">
-                  <span className="text-slate-400">disponible</span>
-                  <span className="text-zinc-600">: </span>
-                  <span className="text-emerald-400">"sept. 2026"</span>
-                  <span className="text-zinc-600">,</span>
+                  <span style={{ color: "#f4a8c7" }}>disponible</span>
+                  <span style={{ color: "#8a4060" }}>: </span>
+                  <span style={{ color: "#ffaac8" }}>"sept. 2026"</span>
+                  <span style={{ color: "#8a4060" }}>,</span>
                 </p>
                 <p>
-                  <span className="text-zinc-400">{"}"}</span>
-                  <span className="cursor-blink ml-0.5 text-indigo-400">|</span>
+                  <span style={{ color: "#c47a9a" }}>{"}"}</span>
+                  <span className="cursor-blink ml-0.5" style={{ color: "#ff6eb4" }}>|</span>
                 </p>
               </div>
             </div>
