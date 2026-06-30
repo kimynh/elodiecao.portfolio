@@ -268,6 +268,54 @@ function ExperienceCard({ exp, align = "left" }) {
   );
 }
 
+function Butterfly({ x, y, size = 26, color, delay = 0, duration = 9, flipX = false }) {
+  const pathX = [0, 28, -18, 42, 8, -10, 0];
+  const pathY = [0, -22, -44, -18, -38, -12, 0];
+  return (
+    <motion.div
+      className="absolute pointer-events-none hidden md:block"
+      style={{ left: x, top: y, zIndex: 0 }}
+      animate={{ x: pathX, y: pathY }}
+      transition={{ duration, delay, repeat: Infinity, ease: "easeInOut", repeatType: "mirror" }}
+    >
+      <motion.div
+        animate={{ rotate: [-6, 6, -4, 8, -6] }}
+        transition={{ duration: duration * 0.7, delay, repeat: Infinity, ease: "easeInOut" }}
+        style={{ scaleX: flipX ? -1 : 1 }}
+      >
+        <svg
+          width={size} height={size * 0.82} viewBox="0 0 44 36" fill="none"
+          style={{ filter: `drop-shadow(0 2px 6px ${color}55)` }}
+        >
+          <defs>
+            <radialGradient id={`wg-${color.replace("#","")}`} cx="50%" cy="40%" r="60%">
+              <stop offset="0%" stopColor="white" stopOpacity="0.4" />
+              <stop offset="100%" stopColor={color} stopOpacity="0" />
+            </radialGradient>
+          </defs>
+          {/* Antennae */}
+          <line x1="21" y1="7" x2="14" y2="1" stroke={color} strokeWidth="1" strokeLinecap="round" />
+          <line x1="23" y1="7" x2="30" y2="1" stroke={color} strokeWidth="1" strokeLinecap="round" />
+          <circle cx="13.5" cy="1" r="1.4" fill={color} />
+          <circle cx="30.5" cy="1" r="1.4" fill={color} />
+          {/* Left upper wing */}
+          <ellipse className="butterfly-wing-left" cx="13" cy="13" rx="12" ry="10" fill={color} />
+          <ellipse className="butterfly-wing-left" cx="13" cy="13" rx="12" ry="10" fill={`url(#wg-${color.replace("#","")})`} />
+          {/* Right upper wing */}
+          <ellipse className="butterfly-wing-right" cx="31" cy="13" rx="12" ry="10" fill={color} />
+          <ellipse className="butterfly-wing-right" cx="31" cy="13" rx="12" ry="10" fill={`url(#wg-${color.replace("#","")})`} />
+          {/* Left lower wing */}
+          <ellipse className="butterfly-wing-left" cx="12" cy="25" rx="9" ry="7" fill={color} opacity="0.8" />
+          {/* Right lower wing */}
+          <ellipse className="butterfly-wing-right" cx="32" cy="25" rx="9" ry="7" fill={color} opacity="0.8" />
+          {/* Body */}
+          <ellipse cx="22" cy="18" rx="1.8" ry="9" fill={color} />
+        </svg>
+      </motion.div>
+    </motion.div>
+  );
+}
+
 function FloatingSide({ exp, align = "left" }) {
   const year = exp.date.match(/\d{4}/g)?.[0];
   const chips = (exp.stack ?? []).slice(0, 5);
@@ -354,6 +402,14 @@ export default function Experience() {
             }}
           />
         ))}
+
+        {/* ── Butterflies ───────────────────────────────────── */}
+        <Butterfly x={60}   y={40}  size={44} color="#f472b6" delay={0}   duration={10} />
+        <Butterfly x="72%"  y={80}  size={38} color="#e879f9" delay={1.5} duration={8}  flipX />
+        <Butterfly x={40}   y={340} size={36} color="#d6568c" delay={3}   duration={11} />
+        <Butterfly x="75%"  y={420} size={42} color="#fb7185" delay={0.8} duration={9}  flipX />
+        <Butterfly x={55}   y={680} size={34} color="#c084fc" delay={2.2} duration={12} />
+        <Butterfly x="70%"  y={740} size={40} color="#f472b6" delay={4}   duration={8}  flipX />
 
         {/* ── Animated line ─────────────────────────────────── */}
         {/* Mobile: left-side line */}

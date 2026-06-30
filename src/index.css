@@ -72,6 +72,25 @@ section {
   }
 }
 
+@keyframes wing-left {
+  0%, 100% { transform: scaleX(1); }
+  50%       { transform: scaleX(0.12); }
+}
+@keyframes wing-right {
+  0%, 100% { transform: scaleX(1); }
+  50%       { transform: scaleX(0.12); }
+}
+.butterfly-wing-left {
+  transform-box: fill-box;
+  transform-origin: right center;
+  animation: wing-left 0.38s ease-in-out infinite;
+}
+.butterfly-wing-right {
+  transform-box: fill-box;
+  transform-origin: left center;
+  animation: wing-right 0.38s ease-in-out infinite;
+}
+
 @keyframes chip-float {
   0%, 100% { translate: 0 0px; }
   50%       { translate: 0 -6px; }
