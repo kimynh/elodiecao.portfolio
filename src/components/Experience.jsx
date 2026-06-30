@@ -303,7 +303,7 @@ export default function Experience() {
             transition={{ duration: 1.6, ease: [0.22, 1, 0.36, 1] }}
             style={{
               background:
-                "linear-gradient(to bottom, #4f46e5 0%, #c4b5fd 35%, #d6d3d1 70%, transparent 100%)",
+                "linear-gradient(to bottom, #d6568c 0%, #f9a8d4 35%, #d6d3d1 70%, transparent 100%)",
             }}
           />
         </div>
@@ -317,7 +317,7 @@ export default function Experience() {
             transition={{ duration: 1.8, ease: [0.22, 1, 0.36, 1] }}
             style={{
               background:
-                "linear-gradient(to bottom, #4f46e5 0%, #c4b5fd 35%, #d6d3d1 70%, transparent 100%)",
+                "linear-gradient(to bottom, #d6568c 0%, #f9a8d4 35%, #d6d3d1 70%, transparent 100%)",
             }}
           />
         </div>

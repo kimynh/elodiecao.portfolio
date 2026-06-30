@@ -25,7 +25,7 @@ export default function Navbar() {
     >
       <div className="soft-card mx-auto flex max-w-6xl items-center justify-between px-5 py-3 md:px-6">
         <a href="#hero" className="flex items-center gap-3 text-primary transition-colors">
-          <span className="flex h-10 w-10 items-center justify-center rounded-2xl bg-primary text-sm font-bold text-white">
+          <span className="flex h-10 w-10 items-center justify-center rounded-2xl text-sm font-bold text-white" style={{ background: "linear-gradient(135deg, #d6568c, #f472b6)" }}>
             EC
           </span>
           <span>
