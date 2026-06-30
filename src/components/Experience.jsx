@@ -268,6 +268,49 @@ function ExperienceCard({ exp, align = "left" }) {
   );
 }
 
+function FloatingSide({ exp, align = "left" }) {
+  const year = exp.date.match(/\d{4}/g)?.[0];
+  const chips = (exp.stack ?? []).slice(0, 5);
+  return (
+    <motion.div
+      initial={{ opacity: 0, x: align === "right" ? 14 : -14 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+      className={`flex flex-col gap-3 py-2 ${align === "right" ? "items-end" : "items-start"}`}
+    >
+      {year && (
+        <span
+          className="text-4xl font-extrabold tabular-nums leading-none select-none"
+          style={{ color: `${exp.accent}30` }}
+        >
+          {year}
+        </span>
+      )}
+      <div className={`flex flex-wrap gap-2 max-w-[200px] ${align === "right" ? "justify-end" : "justify-start"}`}>
+        {chips.map((tag, i) => (
+          <motion.span
+            key={tag}
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 + i * 0.09, duration: 0.4, ease: "easeOut" }}
+            className="float-chip text-[11px] font-semibold px-2.5 py-1 rounded-full select-none cursor-default"
+            style={{
+              animationDelay: `${i * 0.5}s`,
+              backgroundColor: `${exp.accent}0d`,
+              border: `1px solid ${exp.accent}28`,
+              color: exp.accent,
+            }}
+          >
+            {tag}
+          </motion.span>
+        ))}
+      </div>
+    </motion.div>
+  );
+}
+
 export default function Experience() {
   const lineRef = useRef(null);
 
@@ -291,6 +334,26 @@ export default function Experience() {
 
       {/* Timeline container */}
       <div className="relative" ref={lineRef}>
+        {/* ── Background orbs ───────────────────────────────── */}
+        {[
+          { color: "#d6568c", top: "8%",  left: "12%",  size: 260, delay: "0s"   },
+          { color: "#01a7ed", top: "32%", right: "8%",  size: 220, delay: "1.8s" },
+          { color: "#ed9b28", top: "58%", left: "6%",   size: 200, delay: "0.9s" },
+          { color: "#d6568c", top: "78%", right: "14%", size: 180, delay: "2.4s" },
+        ].map(({ color, top, left, right, size, delay }, i) => (
+          <div
+            key={i}
+            className="pointer-events-none absolute rounded-full hidden md:block"
+            style={{
+              top, left, right,
+              width: size, height: size,
+              background: `radial-gradient(circle, ${color}12 0%, transparent 70%)`,
+              animation: `orb-drift ${14 + i * 3}s ease-in-out infinite`,
+              animationDelay: delay,
+              filter: "blur(1px)",
+            }}
+          />
+        ))}
 
         {/* ── Animated line ─────────────────────────────────── */}
         {/* Mobile: left-side line */}
@@ -415,10 +478,8 @@ export default function Experience() {
                     {isLeft ? (
                       <ExperienceCard exp={exp} align="right" />
                     ) : (
-                      <div className="self-center ml-auto">
-                        <span className="text-[11px] font-semibold text-stone-300 tracking-widest select-none">
-                          {exp.date.match(/\d{4}/g)?.slice(-1)[0]}
-                        </span>
+                      <div className="self-end pb-2 pr-2">
+                        <FloatingSide exp={exp} align="right" />
                       </div>
                     )}
                   </div>
@@ -436,10 +497,8 @@ export default function Experience() {
                     {!isLeft ? (
                       <ExperienceCard exp={exp} align="left" />
                     ) : (
-                      <div className="self-center">
-                        <span className="text-[11px] font-semibold text-stone-300 tracking-widest select-none">
-                          {exp.date.match(/\d{4}/g)?.slice(-1)[0]}
-                        </span>
+                      <div className="self-end pb-2 pl-2">
+                        <FloatingSide exp={exp} align="left" />
                       </div>
                     )}
                   </div>
