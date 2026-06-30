@@ -17,27 +17,28 @@ export default function Contact() {
         <p className="section-copy">
           Je suis ouverte aux échanges autour des systèmes d’information, du développement et de toute opportunité future.
         </p>
-        <div className="mt-8 rounded-2xl border border-zinc-800 bg-zinc-900 px-5 py-4 font-mono text-sm">
+        <div className="mt-8 rounded-2xl border px-5 py-4 font-mono text-sm" style={{ background: "#1e0d18", borderColor: "#4a1e35" }}>
           <div className="mb-3 flex items-center gap-1.5">
-            <span className="h-2.5 w-2.5 rounded-full bg-[#ff5f57]" />
-            <span className="h-2.5 w-2.5 rounded-full bg-[#febc2e]" />
-            <span className="h-2.5 w-2.5 rounded-full bg-[#28c840]" />
-            <span className="ml-3 text-xs text-zinc-500">terminal</span>
+            <span className="h-2.5 w-2.5 rounded-full" style={{ background: "#ff6b9d" }} />
+            <span className="h-2.5 w-2.5 rounded-full" style={{ background: "#ffb3d1" }} />
+            <span className="h-2.5 w-2.5 rounded-full" style={{ background: "#ff8fc4" }} />
+            <span className="ml-3 text-xs" style={{ color: "#7d4063" }}>terminal</span>
           </div>
-          <p className="text-zinc-300">
-            <span className="text-green-400">elodie</span>
-            <span className="text-zinc-500">@portfolio</span>
-            <span className="text-zinc-400">:~$ </span>
-            <span className="text-zinc-200">git log --oneline</span>
+          <p>
+            <span style={{ color: "#ff6eb4" }}>elodie</span>
+            <span style={{ color: "#8a4060" }}>@portfolio</span>
+            <span style={{ color: "#c47a9a" }}>:~$ </span>
+            <span style={{ color: "#ffc2d9" }}>git log --oneline</span>
           </p>
-          <p className="mt-1 text-zinc-500">
-            <span className="text-green-500">✓</span> alternance trouvée — Hyvilo, depuis mai 2026
+          <p className="mt-1" style={{ color: "#6b3355" }}>
+            <span style={{ color: "#ff6eb4" }}>✓</span> alternance trouvée — Hyvilo, depuis mai 2026
           </p>
         </div>
         <div className="mt-6 flex flex-col gap-4">
           <a
             href="mailto:elodiecao05@gmail.com"
-            className="flex items-center gap-3 rounded-2xl border border-stone-200 bg-white px-5 py-4 text-base font-semibold text-primary transition-colors hover:border-primary/40"
+            className="flex items-center gap-3 rounded-2xl border px-5 py-4 text-base font-semibold transition-all hover:scale-[1.01]"
+            style={{ borderColor: "#f9a8d4", background: "rgba(214,86,140,0.05)", color: "#be185d" }}
           >
             <Mail size={20} /> elodiecao05@gmail.com
           </a>
@@ -45,7 +46,8 @@ export default function Contact() {
             href="https://www.linkedin.com/in/elodie-cao-674075298"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-3 rounded-2xl border border-stone-200 bg-white px-5 py-4 text-base font-semibold text-primary transition-colors hover:border-primary/40"
+            className="flex items-center gap-3 rounded-2xl border px-5 py-4 text-base font-semibold transition-all hover:scale-[1.01]"
+            style={{ borderColor: "#f9a8d4", background: "rgba(214,86,140,0.05)", color: "#be185d" }}
           >
             <Linkedin size={20} /> linkedin.com/in/elodie-cao-674075298
           </a>
