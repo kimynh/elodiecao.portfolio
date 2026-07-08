@@ -162,7 +162,7 @@ export default function Projects() {
           <div className="flex flex-col gap-5">
             <div>
               <p className="text-stone-600 leading-7">
-                Plateforme ATS qui centralise offres, candidatures et analyses de recrutement — pensée pour les candidats comme pour les recruteurs. Né en formation, devenu un vrai produit.
+                Plateforme ATS qui centralise offres, candidatures et analyses de recrutement - pensée pour les candidats comme pour les recruteurs. Né en formation, devenu un vrai produit.
               </p>
             </div>
 
