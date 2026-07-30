@@ -268,54 +268,6 @@ function ExperienceCard({ exp, align = "left" }) {
   );
 }
 
-function Butterfly({ x, y, size = 26, color, delay = 0, duration = 9, flipX = false,
-  pathX = [0, 28, -18, 42, 8, -10, 0],
-  pathY = [0, -22, -44, -18, -38, -12, 0],
-}) {
-  return (
-    <motion.div
-      className="absolute pointer-events-none hidden md:block"
-      style={{ left: x, top: y, zIndex: 0 }}
-      animate={{ x: pathX, y: pathY }}
-      transition={{ duration, delay, repeat: Infinity, ease: "easeInOut", repeatType: "mirror" }}
-    >
-      <motion.div
-        animate={{ rotate: [-6, 6, -4, 8, -6] }}
-        transition={{ duration: duration * 0.7, delay, repeat: Infinity, ease: "easeInOut" }}
-        style={{ scaleX: flipX ? -1 : 1 }}
-      >
-        <svg
-          width={size} height={size * 0.82} viewBox="0 0 44 36" fill="none"
-          style={{ filter: `drop-shadow(0 2px 6px ${color}55)` }}
-        >
-          <defs>
-            <radialGradient id={`wg-${color.replace("#","")}`} cx="50%" cy="40%" r="60%">
-              <stop offset="0%" stopColor="white" stopOpacity="0.4" />
-              <stop offset="100%" stopColor={color} stopOpacity="0" />
-            </radialGradient>
-          </defs>
-          {/* Antennae */}
-          <line x1="21" y1="7" x2="14" y2="1" stroke={color} strokeWidth="1" strokeLinecap="round" />
-          <line x1="23" y1="7" x2="30" y2="1" stroke={color} strokeWidth="1" strokeLinecap="round" />
-          <circle cx="13.5" cy="1" r="1.4" fill={color} />
-          <circle cx="30.5" cy="1" r="1.4" fill={color} />
-          {/* Left upper wing */}
-          <ellipse className="butterfly-wing-left" cx="13" cy="13" rx="12" ry="10" fill={color} />
-          <ellipse className="butterfly-wing-left" cx="13" cy="13" rx="12" ry="10" fill={`url(#wg-${color.replace("#","")})`} />
-          {/* Right upper wing */}
-          <ellipse className="butterfly-wing-right" cx="31" cy="13" rx="12" ry="10" fill={color} />
-          <ellipse className="butterfly-wing-right" cx="31" cy="13" rx="12" ry="10" fill={`url(#wg-${color.replace("#","")})`} />
-          {/* Left lower wing */}
-          <ellipse className="butterfly-wing-left" cx="12" cy="25" rx="9" ry="7" fill={color} opacity="0.8" />
-          {/* Right lower wing */}
-          <ellipse className="butterfly-wing-right" cx="32" cy="25" rx="9" ry="7" fill={color} opacity="0.8" />
-          {/* Body */}
-          <ellipse cx="22" cy="18" rx="1.8" ry="9" fill={color} />
-        </svg>
-      </motion.div>
-    </motion.div>
-  );
-}
 
 function FloatingSide({ exp, align = "left" }) {
   const year = exp.date.match(/\d{4}/g)?.[0];
@@ -403,30 +355,6 @@ export default function Experience() {
             }}
           />
         ))}
-
-        {/* ── Butterflies ───────────────────────────────────── */}
-        {/* — top — */}
-        <Butterfly x={48}   y={30}  size={46} color="#f472b6" delay={0}    duration={10} pathX={[0,32,-12,45,10,0]}    pathY={[0,-18,-40,-10,-30,0]} />
-        <Butterfly x="74%"  y={90}  size={28} color="#e879f9" delay={2.3}  duration={8}  flipX pathX={[0,-20,15,-35,5,0]}  pathY={[0,-25,-8,-40,-15,0]} />
-        <Butterfly x="88%"  y={55}  size={20} color="#fb7185" delay={0.8}  duration={13} pathX={[0,12,-22,8,-18,0]}    pathY={[0,-30,-12,-45,-20,0]} />
-        {/* — milieu haut — */}
-        <Butterfly x={25}   y={280} size={34} color="#c084fc" delay={3.1}  duration={9}  flipX pathX={[0,-15,30,-8,22,0]}  pathY={[0,-20,-42,-5,-28,0]} />
-        <Butterfly x="66%"  y={310} size={22} color="#d6568c" delay={1.4}  duration={7}  pathX={[0,40,-5,28,-18,0]}    pathY={[0,-12,-35,-22,-8,0]} />
-        <Butterfly x="82%"  y={380} size={44} color="#f9a8d4" delay={4.6}  duration={12} flipX pathX={[0,-28,10,-40,8,0]}   pathY={[0,-35,-15,-50,-25,0]} />
-        <Butterfly x={90}   y={470} size={26} color="#ec4899" delay={0.4}  duration={8}  pathX={[0,18,-30,12,-25,0]}   pathY={[0,-28,-10,-38,-18,0]} />
-        {/* — milieu — */}
-        <Butterfly x="71%"  y={560} size={32} color="#f472b6" delay={2.7}  duration={11} pathX={[0,-22,14,-32,6,0]}    pathY={[0,-20,-45,-8,-32,0]} />
-        <Butterfly x={35}   y={620} size={18} color="#a855f7" delay={5.2}  duration={7}  flipX pathX={[0,25,-10,35,-5,0]}  pathY={[0,-15,-38,-20,-42,0]} />
-        <Butterfly x={115}  y={700} size={40} color="#fb7185" delay={1.9}  duration={10} pathX={[0,15,-35,22,-28,0]}   pathY={[0,-32,-14,-44,-22,0]} />
-        {/* — bas : licences — */}
-        <Butterfly x="77%"  y={800} size={36} color="#e879f9" delay={3.8}  duration={9}  flipX pathX={[0,-30,18,-42,12,0]}  pathY={[0,-25,-48,-12,-36,0]} />
-        <Butterfly x={55}   y={920} size={24} color="#f9a8d4" delay={0.6}  duration={13} pathX={[0,22,-8,38,-15,0]}    pathY={[0,-18,-40,-28,-10,0]} />
-        <Butterfly x="85%"  y={1000} size={42} color="#d6568c" delay={2.1} duration={8}  pathX={[0,-18,28,-10,20,0]}   pathY={[0,-30,-8,-42,-20,0]} />
-        <Butterfly x={30}   y={1100} size={30} color="#c084fc" delay={4.4} duration={11} flipX pathX={[0,35,-15,48,-8,0]}  pathY={[0,-22,-44,-15,-35,0]} />
-        <Butterfly x="62%"  y={1180} size={20} color="#f472b6" delay={1.2} duration={7}  pathX={[0,-12,30,-20,25,0]}   pathY={[0,-38,-10,-48,-22,0]} />
-        <Butterfly x={100}  y={1300} size={48} color="#ec4899" delay={3.3} duration={14} flipX pathX={[0,20,-38,15,-30,0]}  pathY={[0,-20,-42,-8,-30,0]} />
-        <Butterfly x="79%"  y={1420} size={26} color="#a855f7" delay={0.9} duration={9}  pathX={[0,-25,12,-38,8,0]}    pathY={[0,-28,-12,-45,-18,0]} />
-        <Butterfly x={65}   y={1530} size={38} color="#f9a8d4" delay={5.8} duration={10} pathX={[0,18,-28,32,-12,0]}   pathY={[0,-35,-15,-50,-25,0]} />
 
         {/* ── Animated line ─────────────────────────────────── */}
         {/* Mobile: left-side line */}
