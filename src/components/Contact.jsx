@@ -31,7 +31,7 @@ export default function Contact() {
             <span style={{ color: "#ffc2d9" }}>git log --oneline</span>
           </p>
           <p className="mt-1" style={{ color: "#6b3355" }}>
-            <span style={{ color: "#ff6eb4" }}>✓</span> alternance trouvée — Hyvilo, depuis mai 2026
+            <span style={{ color: "#ff6eb4" }}>✓</span> alternance trouvée — Capgemini, dès octobre 2026
           </p>
         </div>
         <div className="mt-6 flex flex-col gap-4">

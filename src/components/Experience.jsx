@@ -13,7 +13,7 @@ const experiences = [
     duo: "alternance",
     title: "Ingénieure Logiciel – Alternance",
     org: "Capgemini",
-    date: "Septembre 2026 – Septembre 2028",
+    date: "Octobre 2026 – Octobre 2028",
     location: "Issy les moulineaux · Hybride",
     description:
       "Intégration des équipes spécialisées en ingénierie logicielle et architectures Cloud, en parallèle du Master MIAGE à Panthéon-Sorbonne.",
@@ -33,8 +33,8 @@ const experiences = [
     description:
       "Master MIAGE en alternance chez Capgemini, centré sur la gestion de projet, les systèmes d'information et l'ingénierie logicielle.",
     stack: ["Master MIAGE", "Alternance", "Gestion de projet", "SI", "Ingénierie logicielle"],
-    status: "À venir",
-    type: "upcoming",
+    status: "En cours",
+    type: "active",
     accent: "#ed9b28",
   },
   {
@@ -42,7 +42,7 @@ const experiences = [
     logo: hyviloLogo,
     title: "Développeuse Data Engineer",
     org: "Hyvilo",
-    date: "Mai 2026 – aujourd'hui",
+    date: "Mai – Août 2026",
     location: "Paris - Sur site",
     description:
       "Conception et développement de pipelines ETL de données dans un environnement de production.",
@@ -55,8 +55,8 @@ const experiences = [
       "Rédaction de documentation technique.",
     ],
     stack: ["Python", "pandas", "Mage AI", "API REST", "SFTP", "Git", "GitLab CI/CD"],
-    status: "En cours",
-    type: "active",
+    status: "Terminé",
+    type: "past",
     accent: "#01a7ed",
   },
   {
@@ -327,9 +327,9 @@ export default function Experience() {
       >
         <span className="eyebrow">Parcours</span>
         <h2 className="section-title mt-5">
-          Stage chez Hyvilo, alternance chez Capgemini,{" "}
+          Master à Panthéon-Sorbonne, alternance chez Capgemini,{" "}
           <br className="hidden md:block" />
-          Master à Panthéon-Sorbonne.
+          après un stage chez Hyvilo.
         </h2>
       </motion.div>
 

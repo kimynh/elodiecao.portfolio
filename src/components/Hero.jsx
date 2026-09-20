@@ -34,7 +34,7 @@ export default function Hero() {
               transition={{ duration: 1.05, ease: "easeOut" }}
               className="mt-6 max-w-2xl text-lg leading-8 text-stone-600 md:text-xl"
             >
-              Actuellement en L3 MIAGE à l’Université Paris Cité, je suis en stage chez Hyvilo du 20 mai au 14 août 2026. En septembre 2026, je rejoins Capgemini en alternance pour 2 ans, en parallèle du Master MIAGE à Panthéon-Sorbonne.
+              Après un stage chez Hyvilo comme Développeuse Data Engineer, je suis désormais en Master MIAGE à l’Université Paris 1 Panthéon-Sorbonne. Je rejoins Capgemini en alternance dès octobre 2026 pour 2 ans, au sein des équipes d’ingénierie logicielle.
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 32 }}
@@ -115,7 +115,7 @@ export default function Hero() {
                 <p className="pl-5">
                   <span style={{ color: "#f4a8c7" }}>disponible</span>
                   <span style={{ color: "#8a4060" }}>: </span>
-                  <span style={{ color: "#ffaac8" }}>"sept. 2026"</span>
+                  <span style={{ color: "#ffaac8" }}>"oct. 2026"</span>
                   <span style={{ color: "#8a4060" }}>,</span>
                 </p>
                 <p>
@@ -128,19 +128,19 @@ export default function Hero() {
               <div className="rounded-[1.75rem] border border-stone-200/80 bg-[#f8f5ef] p-5">
                 <CalendarDays size={20} className="text-primary" />
                 <p className="mt-4 text-sm font-semibold uppercase tracking-[0.18em] text-stone-500">
-                  Stage
+                  Master MIAGE
                 </p>
                 <p className="mt-2 text-lg font-semibold text-primary">
-                  Mai à août 2026
+                  Depuis sept. 2026
                 </p>
               </div>
               <div className="rounded-[1.75rem] border border-stone-200/80 bg-[#f8f5ef] p-5">
                 <BriefcaseBusiness size={20} className="text-primary" />
                 <p className="mt-4 text-sm font-semibold uppercase tracking-[0.18em] text-stone-500">
-                  Focus
+                  Alternance
                 </p>
                 <p className="mt-2 text-lg font-semibold text-primary">
-                  Python, Mage AI, CI/CD
+                  Capgemini · oct. 2026
                 </p>
               </div>
             </div>

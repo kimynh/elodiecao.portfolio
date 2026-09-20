@@ -19,7 +19,7 @@ const highlights = [
   {
     icon: <CalendarDays size={18} className="text-accent" />,
     label: "Début alternance",
-    value: "Septembre 2026",
+    value: "Octobre 2026",
   },
   {
     icon: <Car size={18} className="text-accent" />,
@@ -39,15 +39,16 @@ export default function Alternance() {
       >
         <span className="eyebrow">Alternance confirmée</span>
         <h2 className="section-title mt-5 max-w-3xl">
-          Capgemini dès septembre 2026,{" "}
+          Capgemini dès octobre 2026,{" "}
           <span className="font-display italic text-taupe">
             Master MIAGE à Panthéon-Sorbonne.
           </span>
         </h2>
         <p className="mt-4 max-w-2xl text-base leading-7 text-stone-600 md:text-lg">
-          Après mon stage chez Hyvilo cet été, je rejoindrai Capgemini en
-          septembre 2026 en tant qu'Ingénieure Logiciel en alternance pour 24 mois,
-          en parallèle du Master MIAGE à Panthéon-Sorbonne.
+          Après mon stage chez Hyvilo, j'ai rejoint le Master MIAGE à
+          Panthéon-Sorbonne à la rentrée 2026. Je rejoindrai Capgemini en
+          octobre 2026 en tant qu'Ingénieure Logiciel en alternance pour 24 mois,
+          en parallèle du master.
         </p>
 
         <div className="mt-10 grid gap-6 lg:grid-cols-3">
@@ -60,7 +61,7 @@ export default function Alternance() {
             className="soft-card flex flex-col justify-between gap-6 p-6"
           >
             <div>
-              <span className="pill-tag mb-4 inline-flex">Confirmée</span>
+              <span className="pill-tag mb-4 inline-flex">En cours</span>
               <img
                 src={sorbonneLogo}
                 alt="Panthéon Sorbonne - Université Paris 1"
@@ -91,7 +92,7 @@ export default function Alternance() {
             className="soft-card flex flex-col justify-between gap-6 p-6"
           >
             <div>
-              <span className="pill-tag mb-4 inline-flex">En cours</span>
+              <span className="pill-tag mb-4 inline-flex">Terminé</span>
               <img
                 src={hyviloLogo}
                 alt="Hyvilo"
@@ -140,12 +141,12 @@ export default function Alternance() {
               </p>
               <p className="mt-3 text-sm leading-6 text-stone-600">
                 Intégration des équipes spécialisées en ingénierie logicielle
-                et architectures Cloud dès septembre 2026 pour un contrat de
+                et architectures Cloud dès octobre 2026 pour un contrat de
                 24 mois en parallèle du Master MIAGE.
               </p>
             </div>
             <div className="flex flex-wrap gap-2">
-              <span className="pill-tag">Septembre 2026</span>
+              <span className="pill-tag">Octobre 2026</span>
               <span className="pill-tag">24 mois</span>
               <span className="pill-tag">Ingénierie logicielle</span>
               <span className="pill-tag">Cloud</span>
